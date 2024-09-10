@@ -13,11 +13,12 @@
   <body>
 
     <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
 
-    <!--jp added the following two lines for devise configuration-->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!--jp added the following two lines according to devise configuration-->
+    <!--<p class="notice"><%#= notice %></p>-->
+    <!--<p class="alert"><%#= alert %></p>-->
+
+    <%= render "shared/flashes" %>
 
     <%= yield %>
   </body>
