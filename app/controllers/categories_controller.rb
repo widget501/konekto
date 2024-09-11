@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
 
     if @category.save
 
-      redirect_to @category, notice: 'Category was successfully created.'
+      redirect_to @category, notice: 'Category created'
     else
       render :new
     end
@@ -28,6 +28,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:title, :description)
+    # params.require(:category).permit(:title, :description)
+    params.require(:category).permit(:title, :description, :user_id)
   end
 end
