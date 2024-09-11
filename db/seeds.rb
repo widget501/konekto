@@ -18,7 +18,7 @@ puts "database cleared"
 
 # Seed Users
 User.create([
-  { user_name: 'jp', bio: 'Software engineer with a passion for AI.', email: 'jp@gmail.com', password: 'password' },
+  { user_name: 'jp', bio: 'Coffee Barista', email: 'jp@gmail.com', password: 'password' },
   { user_name: 'sammy', bio: 'Tech enthusiast and blogger.', email: 'samuel@gmail.com', password: 'password' },
   { user_name: 'xhanti', bio: 'Machine learning researcher.', email: 'xhanti@gmail.com', password: 'password' }
 ])
