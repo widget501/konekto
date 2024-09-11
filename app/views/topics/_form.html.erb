@@ -1,0 +1,25 @@
+<p>app/views/topics/_form.html.erb</p>
+
+<%= simple_form_for @topic, remote: true do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :title, input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :description, input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.association :category, input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.association :user, input_html: { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>
