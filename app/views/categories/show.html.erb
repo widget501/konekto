@@ -6,4 +6,6 @@
   <% end %>
 </ul>
 
-<%= link_to 'New Topic', new_category_topic_path(@category) %>
+<%= link_to 'Categories', categories_path, class: 'btn btn-primary' %>
+
+<%= link_to 'New Category', new_category_path(@category), class: 'btn btn-primary' %>
