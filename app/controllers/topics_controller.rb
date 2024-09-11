@@ -8,14 +8,18 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @category = Category.find(params[:category_id])
     @topic = Topic.new
   end
 
   def create
+    @category = Category.find(params[:category_id])
     @topic = Topic.new(topic_params)
+    @topic.category = @category
+    @topic.user = current_user
 
     if @topic.save
-      redirect_to @topic, notice: 'Topic created.'
+      redirect_to topic_path(@topic), notice: 'Topic created.'
     else
       render :new
     end

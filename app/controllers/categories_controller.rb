@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])  
+    @category = Category.find(params[:id])
 
     @topics = @category.topics
   end
@@ -25,9 +25,9 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
-    private
+  private
 
-    def category_params
-      params.require(:category).permit(:title, :description)
-    end
+  def category_params
+    params.require(:category).permit(:title, :description)
+  end
 end
