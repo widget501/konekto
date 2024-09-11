@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :categories, only: [:index, :show, :new, :create] do
-    resources :topics, only: [:index, :new, :create] do
+    resources :topics, only: [:new, :create] do
       resources :posts, only: [:index, :new, :create] do
         resources :comments, only: [:new, :create]
         resources :likes, only: [:create]
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users
-  resources :topics, only: [:show]
+  resources :topics, only: [:index, :show, :edit, :update]
   resources :posts, only: [:edit, :update, :delete]
   resources :likes, only: [:delete]
 end

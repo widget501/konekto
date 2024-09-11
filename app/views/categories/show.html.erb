@@ -5,3 +5,5 @@
     <li><%= link_to topic.title, topic_path(topic) %></li>
   <% end %>
 </ul>
+
+<%= link_to 'New Topic', new_category_topic_path(@category) %>
