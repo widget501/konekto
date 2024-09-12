@@ -1,16 +1,34 @@
-.card-category {
+.card {
   background-image: url('https://res.cloudinary.com/dbsjj5ynm/image/upload/v1725976778/Untitled_design_xuuu6c.png');
   background-size: cover;
   background-position: center;
-  height: 120px;
-  width: 5%;
+  width: 600px;
   display: flex;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
-  color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 16px;
+  margin: 20px 0;
+
 }
+.card h1 {
+  margin-top: 0;
+  }
+.card ul {
+  list-style-type: none;
+  padding: 0;
+  }
+  .card li {
+  margin: 8px 0;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
