@@ -9,18 +9,17 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
+      <%= render "shared/navbar" %>
 
-    <%= render "shared/navbar" %>
 
-    <!--jp added the following two lines according to devise configuration-->
-    <!--<p class="notice"><%#= notice %></p>-->
-    <!--<p class="alert"><%#= alert %></p>-->
+      <!--jp added the following two lines according to devise configuration-->
+      <!--<p class="notice"><%#= notice %></p>-->
+      <!--<p class="alert"><%#= alert %></p>-->
 
-    <%= render "shared/flashes" %>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+      <%= render "shared/flashes" %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </body>
 </html>

@@ -1,9 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<h1>KONEKTO</h1>
+<h1>I-KONEKTO</h1>
+<div class="cards-container">
 <ul>
   <% @categories.each do |category| %>
     <li><%= link_to category.title, category_path(category) %></li>
   <% end %>
 </ul>
+</div>
