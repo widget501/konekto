@@ -2,7 +2,7 @@
   background-image: url('https://res.cloudinary.com/dbsjj5ynm/image/upload/v1725976778/Untitled_design_xuuu6c.png');
   background-size: cover;
   background-position: center;
-  width: 600px;
+  width: 100%;
   display: flex;
   justify-content:flex-start;
   align-items: center;
@@ -11,9 +11,9 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 16px;
+  padding: 20px;
   margin: 20px 0;
-
+  box-sizing: border-box;
 }
 .card h1 {
   margin-top: 0;
