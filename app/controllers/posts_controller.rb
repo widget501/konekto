@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:new, :create]
+  before_action :set_topic, only: [:new, :create, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     # GET  all my posts
     def index
@@ -8,11 +10,14 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     # GET my specific posts/1
     def show
+      @post = Post.find(params[:id])
+      @comments = @post.comments
     end
 
     # GET me creating a new post /posts/new
     def new
-      @post = Post.new
+      # @topic = Topic.find(params[:topic_id])
+      @post = @topic.posts.build
     end
 
     # GET making an edit to a post/posts/1/edit
@@ -21,10 +26,15 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     # POST creation of our /posts
     def create
-      @post = Post.new(post_params)
+      # @topic = Topic.find(params[:topic_id])
+      @post = @topic.posts.build(post_params)
+      @post.user = current_user
+      @post.by_ai = false
+      # raise
+      # @post.topic = @topic
 
       if @post.save
-        redirect_to @post, notice: 'Post was successfully created.'
+        redirect_to [@category, @topic, @post], notice: 'Post was successfully created.'
       else
         render :new
       end
@@ -48,11 +58,19 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
     private
 
       def set_post
-        @post = Post.find(params[:id])
+        @post = @topic.posts.find(params[:id])
+      end
+
+      def set_topic
+        @topic = Topic.find(params[:topic_id])
+      end
+
+      def set_category
+        @category = Category.find(params[:category_id])
       end
 
       # Only allow a list of parameters through so as to have some control
       def post_params
-        params.require(:post).permit(:title, :content)
+        params.require(:post).permit(:title, :content, :user_id)
       end
 end
