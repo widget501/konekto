@@ -1,0 +1,8 @@
+<div class="card">
+<h1>NEW COMMENT</h1>
+
+<%= simple_form_for [@category, @topic, @post, @comment] do |f| %>
+  <%= f.input :content, input_html: { class: 'form-control' } %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+</div>

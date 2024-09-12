@@ -1,0 +1,16 @@
+<div class="card">
+  <h1>Comment</h1>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @comment.title %>
+  </p>
+
+  <% @posts.comment.each do |comment| %>
+    <%= link_to comment.content, category_topic_post_path  %>
+  <% end %>
+
+  <br>
+
+  <%= link_to 'Back', new_category_topic_post_comment_path %>
+</div>

@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @categories = Category.all
+    @topics = Topic.all
+    @posts = Post.all
   end
 end
