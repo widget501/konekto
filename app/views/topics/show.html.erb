@@ -1,16 +1,15 @@
 <p>app/views/topics/show.html.erb</p>
 
-<h1>Topic</h1>
-
 <p>
   <strong>Title:</strong>
   <%= @topic.title %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @topic.description %>
-</p>
+<% @topic.posts.each do |post| %>
+  <%= link_to post.content, root_path  %> # post show page instead of root path
+<% end %>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<br>
+<%#= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
+  

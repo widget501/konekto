@@ -1,9 +1,9 @@
 <div class="card">
-<h1>CATEGORIES</h1>
+  <h1>CATEGORIES</h1>
 
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= link_to category.title, category_path(category) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= link_to category.title, category_path(category) %></li>
+    <% end %>
+  </ul>
 </div>
