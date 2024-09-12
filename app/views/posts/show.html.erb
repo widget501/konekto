@@ -1,21 +1,26 @@
 <div class="card">
-<h1><%= @post.title %></h1>
+<p>
+  <strong>User:</strong>
+  <%= @post.user.user_name %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @post.topic.title %>
+</p>
 
 <p>
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @post.topic.name %>
-</p>
+<%= link_to "Comment", new_category_topic_post_comment_path(@post.topic.category, @post.topic, @post) %>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.name %>
-</p>
+<% @comments.each do |comment| %>
+  <%= comment.content %>
+  <%= comment.user.user_name %>
+  <hr>
+<% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', root_path %>
 </div>

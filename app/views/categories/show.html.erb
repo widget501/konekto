@@ -3,7 +3,7 @@
 
 <ul>
   <% @topics.each do |topic| %>
-    <li><%= link_to topic.title, topic_path(topic) %></li>
+    <li><%= link_to topic.title, category_topic_path(topic) %></li>
   <% end %>
 </ul>
 
