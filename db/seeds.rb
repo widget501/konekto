@@ -58,7 +58,7 @@ Post.create([
   { topic_id: Topic.first.id, user_id: User.first.id, content: 'I think Rust is going to be big!', by_ai: false },
   { topic_id: Topic.second.id, user_id: User.second.id, content: 'AI will improve diagnostics significantly.', by_ai: false },
   { topic_id: Topic.third.id, user_id: User.third.id, content: 'AI will be central to future tech development.', by_ai: true },
-  { topic_id: Topic.first.id, user_id: User.first.id, content: 'I think Adele will release a new album.', by_ai: false },
+  { topic_id: Topic.first.id, user_id: User.first.id, content: 'I think Microsoft will release a new version.', by_ai: false },
   { topic_id: Topic.second.id, user_id: User.second.id, content: 'I think the next big movie will be a sci-fi.', by_ai: false },
   { topic_id: Topic.third.id, user_id: User.third.id, content: 'I think the next big sport will be drone racing.', by_ai: true },
   { topic_id: Topic.first.id, user_id: User.first.id, content: 'I think the next big book will be a thriller.', by_ai: false },
