@@ -1,5 +1,29 @@
 <div class="card">
 <h1>NEW POST</h1>
-<%= render 'form', post: @post %>
+
+
+<%= simple_form_for([@topic, @post]) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.input :content %>
+  <%# <%= form.association :topic, collection: Topic.all, label_method: :name, value_method: :id %>
+  <%# <%= form.association :user, collection: User.all, label_method: :name, value_method: :id %>
+
+  <div class="actions">
+    <%= form.button :submit, class: 'btn btn-success' %>
+  </div>
+<% end %>
+
+
 <%= link_to 'Back', root_path, class: 'btn btn-success' %>
 </div>
