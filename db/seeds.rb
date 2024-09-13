@@ -22,61 +22,64 @@ puts "Seeding database..."
 
 # Seed Users
 User.create([
-  { user_name: 'jp', bio: 'Coffee Barista', email: 'jp@jp.jp', password: 'jp@jp.jp' },
-  { user_name: 'sammy', bio: 'Tech enthusiast and blogger.', email: 'sam@sam.sam', password: 'sam@sam.sam' },
-  { user_name: 'xhanti', bio: 'Machine learning researcher.', email: 'xhanti@gmail.com', password: 'password' }
+  { user_name: "Joe Braby", bio: "Coffee Barista", email: "jp@jp.com", password: "jp@jp.com" },
+  { user_name: "Sammy", bio: "Tech enthusiast and blogger.", email: "sam@sam.sam", password: "sam@sam.sam" },
+  { user_name: "Xhanti", bio: "Nuclear Machine learning guru.", email: "xhanti@gmail.com", password: "password" }
   ])
 
 # Seed Categories
 Category.create([
-  { title: 'Music', description: 'All about the latest in music.', user_id: User.first.id },
-  { title: 'Movies', description: 'Discussions on the latest movies.', user_id: User.second.id },
-  { title: 'Sports', description: 'All about the latest in sports.', user_id: User.third.id },
-  { title: 'Technology', description: 'All about the latest in tech.', user_id: User.first.id },
-  { title: 'AI & Machine Learning', description: 'Discussions on AI advancements.', user_id: User.second.id },
-  { title: 'Programming', description: 'Topics on programming languages and frameworks.', user_id: User.third.id },
-  { title: 'Books', description: 'Discussions on the latest books.', user_id: User.first.id },
-  { title: 'Food', description: 'All about the latest in food.', user_id: User.second.id },
-  { title: 'Travel', description: 'Discussions on the latest travel destinations.', user_id: User.third.id }
+  { title: "Music", description: "All about the latest Music industry news.", user_id: User.first.id },
+  { title: "Movies", description: "The latest movies on the circuit.", user_id: User.second.id },
+  { title: "Sports", description: "What is new in sport...", user_id: User.third.id },
+  { title: "Books", description: "Discussions on the latest top-selling books.", user_id: User.first.id },
+  { title: "Food", description: "Food! What the descerning foodie wants to know", user_id: User.second.id },
+  { title: "Travel", description: "Pack! Lets go! The latest on exotic travel destinations", user_id: User.third.id },
+  { title: "Programming", description: "New developments in programming languages and frameworks.", user_id: User.third.id },
+  { title: "AI & Machine Learning", description: "Discussions on AI & ML advancements.", user_id: User.second.id },
+  { title: "Technology", description: "Latest trends in the technology sector", user_id: User.first.id }
   ])
 
 # Seed Topics
 Topic.create([
-  { title: 'Best programming languages in 2024', description: 'Discussion on the most popular languages.', category_id: Category.find_by(title: 'Programming').id, user_id: User.first.id, by_ai: false },
-  { title: 'AI in healthcare', description: 'How AI is transforming healthcare.', category_id: Category.find_by(title: 'AI & Machine Learning').id, user_id: User.second.id, by_ai: false },
-  { title: 'Future of tech', description: 'What does the future hold for tech?', category_id: Category.find_by(title: 'Technology').id, user_id: User.third.id, by_ai: true },
-  { title: 'Best music of 2024', description: 'Discussion on the best music of the year.', category_id: Category.find_by(title: 'Music').id, user_id: User.first.id, by_ai: false },
-  { title: 'Best movies of 2024', description: 'Discussion on the best movies of the year.', category_id: Category.find_by(title: 'Movies').id, user_id: User.second.id, by_ai: false },
-  { title: 'Best sports of 2024', description: 'Discussion on the best sports of the year.', category_id: Category.find_by(title: 'Sports').id, user_id: User.third.id, by_ai: true },
-  { title: 'Best books of 2024', description: 'Discussion on the best books of the year.', category_id: Category.find_by(title: 'Books').id, user_id: User.first.id, by_ai: false },
-  { title: 'Best food of 2024', description: 'Discussion on the best food of the year.', category_id: Category.find_by(title: 'Food').id, user_id: User.second.id, by_ai: false },
-  { title: 'Best travel of 2024', description: 'Discussion on the best travel of the year.', category_id: Category.find_by(title: 'Travel').id, user_id: User.third.id, by_ai: true }
+  { title: "Popular music of 2024", description: "Listen to the best music of the year.", category_id: Category.find_by(title: "Music").id, user_id: User.first.id, by_ai: false },
+  { title: "Goldies of the 40s - music of a forgotten era", description: "Music dating from mid and post WWII", category_id: Category.find_by(title: "Music").id, user_id: User.first.id, by_ai: false },
+  { title: "Top movies of 2024", description: "Watch the best movies of the year.", category_id: Category.find_by(title: "Movies").id, user_id: User.second.id, by_ai: false },
+  { title: "Sport in 2024", description: "Reaad all about the world of sports this year.", category_id: Category.find_by(title: "Sports").id, user_id: User.third.id, by_ai: true },
+  { title: "Best books trending 2024", description: "Find your next read. A discussion on the best books of the year.", category_id: Category.find_by(title: "Books").id, user_id: User.first.id, by_ai: false },
+  { title: "Food of the world, 2024", description: "All about new dishes and the rantings of foodies", category_id: Category.find_by(title: "Food").id, user_id: User.second.id, by_ai: false },
+  { title: "Exotic travel destinations", description: "Everything you want to know about trending exotic travel destinations.", category_id: Category.find_by(title: "Travel").id, user_id: User.third.id, by_ai: true },
+  { title: "Most used programming languages in 2024", description: "Discussion on the latest and most popular languages.", category_id: Category.find_by(title: "Programming").id, user_id: User.first.id, by_ai: false },
+  { title: "AI in aviation", description: "How AI is making the skies safer", category_id: Category.find_by(title: "AI & Machine Learning").id, user_id: User.second.id, by_ai: false },
+  { title: "AI in healthcare", description: "Your health transformed by AI", category_id: Category.find_by(title: "AI & Machine Learning").id, user_id: User.second.id, by_ai: false },
+  { title: "AI in agriculture", description: "AI is transforming the agricultural landscape.", category_id: Category.find_by(title: "AI & Machine Learning").id, user_id: User.second.id, by_ai: false },
+  { title: "Future of tech", description: "What does the future hold for tech?", category_id: Category.find_by(title: "Technology").id, user_id: User.third.id, by_ai: true }
   ])
 
 # Seed Posts
 Post.create([
-  { topic_id: Topic.first.id, user_id: User.first.id, content: 'I think Rust is going to be big!', by_ai: false },
-  { topic_id: Topic.second.id, user_id: User.second.id, content: 'AI will improve diagnostics significantly.', by_ai: false },
-  { topic_id: Topic.third.id, user_id: User.third.id, content: 'AI will be central to future tech development.', by_ai: true },
-  { topic_id: Topic.first.id, user_id: User.first.id, content: 'I think Microsoft will release a new version.', by_ai: false },
-  { topic_id: Topic.second.id, user_id: User.second.id, content: 'I think the next big movie will be a sci-fi.', by_ai: false },
-  { topic_id: Topic.third.id, user_id: User.third.id, content: 'I think the next big sport will be drone racing.', by_ai: true },
-  { topic_id: Topic.first.id, user_id: User.first.id, content: 'I think the next big book will be a thriller.', by_ai: false },
-  { topic_id: Topic.second.id, user_id: User.second.id, content: 'I think the next big food trend will be plant-based.', by_ai: false },
-  { topic_id: Topic.third.id, user_id: User.third.id, content: 'I think the next big travel destination will be Antarctica.', by_ai: true }
+  { topic_id: Topic.first.id, user_id: User.first.id, content: "The latest music of Cuba Picket Fence is EPIC!", by_ai: false },
+  { topic_id: Topic.second.id, user_id: User.second.id, content: "Jazz: Bebop, a fast-paced and complex subgenre of jazz, emerged in the late 1940s, revolutionizing the genre with its innovative harmonies and rhythms. ", by_ai: false },
+  { topic_id: Topic.third.id, user_id: User.third.id, content: "AI will be central to future movie production.", by_ai: true },
+  { topic_id: Topic.first.id, user_id: User.first.id, content: "Pink will release a new album.", by_ai: false },
+  { topic_id: Topic.second.id, user_id: User.second.id, content: "Bands like Glenn Miller, Tommy Dorsey, and Duke Ellington became household names.", by_ai: false },
+  { topic_id: Topic.third.id, user_id: User.third.id, content: "Star Wars ... I want more Star Wars!", by_ai: true },
+  { topic_id: Topic.first.id, user_id: User.first.id, content: "Joe Satriani - Surfing with the Alien is my best album find of all time.", by_ai: false },
+  { topic_id: Topic.second.id, user_id: User.second.id, content: "The music of the 1940s reflected the spirit of the times, providing a soundtrack for both celebration and hardship. Its legacy continues to influence popular music today", by_ai: false },
+  { topic_id: Topic.third.id, user_id: User.third.id, content: "The movie on Antarctica can spark the next exotic travel destination to this continent.", by_ai: true }
   ])
 
 # Seed Comments
 Comment.create([
-  { post_id: Post.first.id, user_id: User.second.id, content: 'I agree! Rust has been gaining a lot of attention.' },
-  { post_id: Post.second.id, user_id: User.third.id, content: 'Indeed, especially in medical imaging.' },
-  { post_id: Post.third.id, user_id: User.first.id, content: 'It’s inevitable with the current advancements.' },
-  { post_id: Post.first.id, user_id: User.third.id, content: 'I think Adele will release a new album.' },
-  { post_id: Post.second.id, user_id: User.first.id, content: 'I think the next big movie will be a sci-fi.' },
-  { post_id: Post.third.id, user_id: User.second.id, content: 'I think the next big sport will be drone racing.' },
-  { post_id: Post.first.id, user_id: User.third.id, content: 'I think the next big book will be a thriller.' },
-  { post_id: Post.second.id, user_id: User.third.id, content: 'I think the next big food trend will be plant-based.' },
-  { post_id: Post.third.id, user_id: User.first.id, content: 'I think the next big travel destination will be Antarctica.' }
+  { post_id: Post.first.id, user_id: User.second.id, content: "I agree! Cuba Epic has been gaining a lot of attention." },
+  { post_id: Post.second.id, user_id: User.third.id, content: "Artists like Charlie Parker and Dizzy Gillespie were pioneers of this style." },
+  { post_id: Post.third.id, user_id: User.first.id, content: "It is inevitable with the current advancements." },
+  { post_id: Post.first.id, user_id: User.third.id, content: "Charlie Parker ios my favourite!!!" },
+  { post_id: Post.second.id, user_id: User.first.id, content: "The 1940s also saw the rise of crooners, such as Frank Sinatra and Bing Crosby, whose smooth vocals and romantic ballads captured the hearts of millions." },
+  { post_id: Post.third.id, user_id: User.second.id, content: "The next big sport will be AI-driven F1 racing.  This will truly give the best car manufacturer the edge" },
+  { post_id: Post.first.id, user_id: User.third.id, content: "Cuba Picket Fence has just signed a contract to produce a soundtract to a movie planned later this year" },
+  { post_id: Post.second.id, user_id: User.third.id, content: "This genre gained popularity, with artists like Hank Williams and Ernest Tubb telling stories of rural life through their music." },
+  { post_id: Post.third.id, user_id: User.first.id, content: "Antarctica... whoop whoop!" }
   ])
 
 # Seed Likes
