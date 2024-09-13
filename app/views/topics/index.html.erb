@@ -13,6 +13,7 @@
 
   <tbody>
     <% @topics.each do |topic| %>
+      <div class="card">
       <tr>
         <td><%= topic.title %></td>
         <td><%= topic.description %></td>
@@ -21,6 +22,7 @@
         <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
         <!--<td><%#= link_to 'Destroy', topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
+      </div>
     <% end %>
   </tbody>
 </table>

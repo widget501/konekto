@@ -17,9 +17,11 @@
 <%= link_to "Comment", new_post_comment_path(@post) %>
 
 <% @comments.each do |comment| %>
+<div class="card">
   <%= comment.content %>
   <%= comment.user.user_name %>
   <hr>
+  </div>
 <% end %>
 
 <%= link_to 'Back', root_path %>
