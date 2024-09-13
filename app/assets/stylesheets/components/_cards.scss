@@ -2,7 +2,7 @@
   background-image: url('https://res.cloudinary.com/dbsjj5ynm/image/upload/v1725976778/Untitled_design_xuuu6c.png');
   background-size: cover;
   background-position: center;
-  width: 100%;
+  width: 33.3%;
   display: flex;
   justify-content:flex-start;
   align-items: center;
@@ -17,6 +17,8 @@
 }
 .card h1 {
   margin-top: 0;
+  font-size: 60px;
+  font-weight: bolder;
   }
 .card ul {
   list-style-type: none;
@@ -28,7 +30,16 @@
 
   .cards-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between ;
     margin: 0;
+    width: 100%;
   }
+
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
