@@ -11,7 +11,7 @@
   </head>
   <body>
       <%= render "shared/navbar" %>
-
+        <ul id="random-posts"></ul>
 
       <!--jp added the following two lines according to devise configuration-->
       <!--<p class="notice"><%#= notice %></p>-->
@@ -21,5 +21,6 @@
       <div class="container">
         <%= yield %>
       </div>
+      <script src="app/javascript/script.js"></script>
     </body>
 </html>
