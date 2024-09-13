@@ -12,15 +12,17 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :categories, only: [:index, :show, :new, :create] do
-    resources :topics, only: [:new, :create, :index, :show, :edit, :update] do
-      resources :posts, only: [:index, :new, :create, :show, :update, :edit, :destroy] do
-        resources :comments, only: [:new, :create]
-        resources :likes, only: [:create, :destroy]
-      end
-    end
+    resources :topics, only: [:new, :create]
   end
-  resources :users
-  # resources :topics, only: [:index, :show, :edit, :update]
-  # resources :posts, only: [:edit, :update, :delete]
-  resources :likes, only: [:delete]
+
+  resources :topics, only: [:index, :show] do
+    resources :posts, only: [ :new, :create]
+  end
+
+  resources :posts, only: [ :show, :edit, :update, :destroy] do
+    resources :comments, only: [:new, :create]
+    resources :likes, only: [:create]
+  end
+
+  resources :likes, only: [:destroy]
 end

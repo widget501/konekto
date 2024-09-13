@@ -6,11 +6,11 @@
     <%= @topic.title %>
   </p>
 
-  <% @topic.posts.each do |post| %>
-    <%= link_to post.content, category_topic_post_path(@topic.category, @topic) %>
+  <% @posts.each do |post| %>
+    <%= link_to post.content, post_path(post) %>
   <% end %>
 
   <br>
-  <%= link_to 'CREATE POST',  new_category_topic_post_path(@topic.category, @topic), class: 'btn btn-success' %> |
+  <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success' %> |
   <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
 </div>

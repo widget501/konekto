@@ -14,7 +14,7 @@
   <%= @post.content %>
 </p>
 
-<%= link_to "Comment", new_category_topic_post_comment_path(@post.topic.category, @post.topic, @post) %>
+<%= link_to "Comment", new_post_comment_path(@post) %>
 
 <% @comments.each do |comment| %>
   <%= comment.content %>
