@@ -3,8 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { title: 'Post 1', url: '/posts/1' },
     { title: 'Post 2', url: '/posts/2' },
     { title: 'Post 3', url: '/posts/3' },
-    // Add more posts as needed
-  ];
+    ];
 
   if (posts.length === 0) {
     console.error('No posts available.');
@@ -17,19 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
-  const numberOfPosts = 3; // Number of random posts to display
+  const numberOfPosts = 3;
+  const selectedIndices = new Set();
 
-  for (let i = 0; i < numberOfPosts; i++) {
+  while (selectedIndices.size < numberOfPosts && selectedIndices.size < posts.length) {
     const randomIndex = Math.floor(Math.random() * posts.length);
-    const post = posts[randomIndex];
+    if (!selectedIndices.has(randomIndex)) {
+      selectedIndices.add(randomIndex);
 
-    const listItem = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = post.url;
-    link.textContent = post.title;
+      const post = posts[randomIndex];
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = post.url;
+      link.textContent = post.title;
 
-    listItem.appendChild(link);
-    randomPostsContainer.appendChild(listItem);
+      listItem.appendChild(link);
+      randomPostsContainer.appendChild(listItem);
+    }
   }
 
   console.log('Random posts added successfully.');
