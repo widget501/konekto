@@ -7,10 +7,12 @@
   </p>
 
   <% @posts.each do |post| %>
+  <div class="card">
     <%= link_to post.content, post_path(post) %>
+  </div>
   <% end %>
 
   <br>
-  <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success' %> |
+  <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success' %>
   <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
 </div>

@@ -3,7 +3,9 @@
 
 <ul>
   <% @topics.each do |topic| %>
+  <div class="card">
     <li><%= link_to topic.title, topic_path(topic) %></li>
+    </div>
   <% end %>
 </ul>
 
