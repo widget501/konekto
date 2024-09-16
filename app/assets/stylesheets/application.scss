@@ -35,7 +35,7 @@ a {
 }
 
 .scrollable-container {
-  height: 50vh;
+  height: 120vh;
   // width: 33%;
   overflow-y: scroll;
   // scrollbar-width: thin;
@@ -59,4 +59,3 @@ a {
   display : grid;
   grid-template-columns: 1fr 1fr;
 }
-
