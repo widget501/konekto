@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [ :show, :edit, :update, :destroy] do
+    member do
+      post 'like', to: 'posts#like'
+      delete 'unlike', to: 'posts#unlike'
+    end
     resources :comments, only: [:new, :create]
-    resources :likes, only: [:create]
   end
-
-  resources :likes, only: [:destroy]
 end
