@@ -16,7 +16,7 @@
 body {
   min-height:100vh;
   color: $font-white !important;
-  background-color: rgb(6, 157, 157) !important;
+  background-color: #87CEEB !important;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -30,10 +30,9 @@ html {
 }
 
 a {
-  color: rgb(176, 212, 200)!important;
+  color: rgb(130, 209, 213)!important;
   text-decoration: none;
 }
-
 
 .scrollable-container {
   height: 50vh;
@@ -60,3 +59,4 @@ a {
   display : grid;
   grid-template-columns: 1fr 1fr;
 }
+
