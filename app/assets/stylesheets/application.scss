@@ -39,12 +39,12 @@ a {
   height: 50vh;
   // width: 33%;
   overflow-y: scroll;
-  scrollbar-width: thin;
+  // scrollbar-width: thin;
 }
 
 .scrollable-content {
-  padding: 5px;
-  font-size: 16px;
+  padding: 18px;
+  font-size: 22px;
 }
 
 .scrollable-container::-webkit-scrollbar {
