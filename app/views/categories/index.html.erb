@@ -1,11 +1,20 @@
 <div class="card">
   <h1>CATEGORIES</h1>
-
-  <ul>
-    <% @categories.each do |category| %>
-    <div class="card">
-      <li><%= link_to category.title, category_path(category) %></li>
+  <div class="home-content">
+    <ul>
+      <% @categories.each do |category| %>
+      <div class="card">
+        <li><%= link_to category.title, category_path(category) %></li>
+      </div>
+      <% end %>
+    </ul>
+    <div class="scrollable-container">
+      <div class="scrollable-content">
+        <% @posts.shuffle.each do |post| %>
+          <%= post.content %>
+          <hr>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </ul>
+  </div>
 </div>
