@@ -1,34 +1,43 @@
 .card {
-  background-color: rgb(14, 49, 38);
-  color: azure;
+  background-color: #133a3f;
+  // color: azure;
   background-position: center;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   align-items: center;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(22, 175, 16, 0.2);
+  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
+  // transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.card-fg:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(22, 199, 225, 0.99) 0px 0px 15px;
+}
+
 .card h1 {
   margin-top: 0;
   font-size: 60px;
   font-weight: bolder;
   color: rgb(176, 212, 200);
   }
+
 .card ul {
   list-style-type: none;
   padding: 0;
   }
-  .card li {
+
+.card li {
   margin: 8px 0;
   color: rgb(176, 212, 200);
-  }
+}
 
   .cards-container {
     display: flex;
@@ -46,5 +55,21 @@
   width: 100%;
 }
 
-// body{
+.card-fg {
+  background-color: #133a3f;
+  // color: azure;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
