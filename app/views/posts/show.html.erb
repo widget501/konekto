@@ -1,18 +1,30 @@
 <div class="card">
 <p>
-  <strong>User:</strong>
   <%= @post.user.user_name %>
 </p>
-
+<div class="card-fg">
 <p>
   <strong>Topic:</strong>
   <%= @post.topic.title %>
 </p>
+</div>
 
+<div class="card-fg">
 <p>
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
+</div>
+
+<% @comments.each do |comment| %>
+<div class="card-fg">
+  <p>
+  <%= comment.content %>
+  <%= comment.user.user_name %>
+  <hr>
+  </p>
+  </div>
+<% end %>
 
 <% if @post.likers.include?(current_user) %>
     <%= button_to 'unlike', unlike_post_path(@post), method: :delete  %>
@@ -21,24 +33,16 @@
 <% end %>
 
 <div class="comment-like">
- <p>
+<p>
   <% if @post.likers.count > 1 %>
     <%= @post.likers.count %> likes
   <% else %>
     <%= @post.likers.count %> like
   <% end %>
- </p>
-  <%= link_to "Comment", new_post_comment_path(@post) %>
-</div>
-
-
-<% @comments.each do |comment| %>
-<div class="card">
-  <%= comment.content %>
-  <%= comment.user.user_name %>
-  <hr>
+</p>
   </div>
-<% end %>
 
-<%= link_to 'Back', root_path %>
+
+<%= link_to "COMMENT", new_post_comment_path(@post), class: 'btn', style: 'background-color: #86D293; color: white;' %>
+<%= link_to 'BACK', root_path, class: 'btn', style: 'background-color: #86D293; color: white;' %>
 </div>

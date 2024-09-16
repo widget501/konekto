@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  helper CategoriesHelper
   def index
     @categories = Category.all
     @posts = Post.all
