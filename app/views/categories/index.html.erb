@@ -3,7 +3,7 @@
   <div class="home-content">
     <ul>
       <% @categories.each do |category| %>
-      <div class="card">
+      <div class="card-fg">
         <li><%= link_to category.title, category_path(category) %></li>
       </div>
       <% end %>
@@ -11,7 +11,8 @@
     <div class="scrollable-container">
       <div class="scrollable-content">
         <% @posts.shuffle.each do |post| %>
-          <%= post.content %>
+          <div class="card-fg"><%= post.content %>
+          </div>
           <hr>
         <% end %>
       </div>
