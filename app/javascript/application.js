@@ -6,4 +6,20 @@ import "bootstrap"
 
 const autoScrollDiv = (scrollContainerSelector, speed = 1) => {
   const scrollContainer = document.querySelector(scrollContainerSelector);
+
+  if (!scrollContainer) return;
+
+  let scrollPosition = 0;
+
+  const scrollInterval = setInterval(() => {
+    scrollPosition += speed
+    scrollContainer.scrollTop += speed
+    if (scrollContainer.scrollTop + scrollContainer.clientHeight >= scrollContainer.scrollHeight) {
+      clearInterval(scrollInterval);
+    }
+  }, 20);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  autoScrollDiv('.scrollable-container', 1);
+});
