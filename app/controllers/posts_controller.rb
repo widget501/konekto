@@ -1,6 +1,27 @@
 class PostsController < ApplicationController
   before_action :set_topic, only: [:new, :create]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :unlike]
+
+  def like
+    if @post.likers.include?(current_user)
+      flash[:notice] = 'You have already liked this post'
+    else
+      @post.likes.create(user: current_user)
+      flash[:notice] = 'Post has been liked'
+    end
+    redirect_to @post
+  end
+
+  def unlike
+    like = @post.likes.find_by(user: current_user)
+    if like
+      like.destroy
+      flash[:notice] = 'You have unliked this post'
+    else
+      flash[:notice] = 'You have not liked this post'
+    end
+    redirect_to @post
+  end
 
   # GET  all my posts
   def index

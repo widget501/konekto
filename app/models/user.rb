@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :topics
   has_many :posts
   has_many :comments
-  has_many :Likes
+  has_many :likes
+  has_many :liked_posts, through: :likes, source: :post
 end
