@@ -3,3 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+
+const autoScrollDiv = (scrollContainerSelector, speed = 1) => {
+  const scrollContainer = document.querySelector(scrollContainerSelector);
+}
