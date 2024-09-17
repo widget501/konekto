@@ -5,8 +5,12 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @category = @topic.category
     @posts = @topic.posts
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   def new

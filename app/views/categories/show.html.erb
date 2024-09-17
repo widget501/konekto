@@ -1,15 +1,28 @@
-<div class="card">
-<h1><%= @category.title %></h1>
+<div class="container">
+  <div class="card topics-card">
+    <h1><%= @category.title %></h1>
 
-<ul>
-  <% @topics.each do |topic| %>
-  <div class="card-fg">
-    <li><%= link_to topic.title, topic_path(topic) %></li>
-    </div>
+    <ul>
+      <% @topics.each do |topic| %>
+        <div class="card-fg">
+          <li>
+            <%= link_to topic.title, topic_path(topic), data: { turbo_frame: "posts" } %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+
+    <%= link_to 'CATEGORY', categories_path, class: 'btn', style: 'background-color: #86D293; color: azure;' %>
+    <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn', style: 'background-color: #86D293; color: azure;' %>
+  </div>
+
+  <div class="card posts-card">
+  <%= turbo_frame_tag "posts" do %>
+    <% if @topic %>
+      <%= render @topic.posts %>
+    <% else %>
+      <p>No posts available.</p>
+    <% end %>
   <% end %>
-</ul>
-
-<%= link_to 'CATEGORY', categories_path, class: 'btn', style: 'background-color: #86D293; color: azure;' %>
-
-<%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn', style: 'background-color: #86D293; color: azure;' %>
+</div>
 </div>

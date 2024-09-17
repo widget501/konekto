@@ -99,3 +99,10 @@ h2 {
   margin-right: 10px;
   color: rgb(46, 223, 140);
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px; 
+}

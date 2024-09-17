@@ -54,6 +54,7 @@ gem 'faker'
 # jp added cloudinary version 2.2.0 & ostruct 0.6.0
 gem "cloudinary", "~> 2.2.0"
 gem "ostruct", "~> 0.6.0"
+gem 'hotwire-rails'
 # gem 'acts_as_votable'
 
 group :development, :test do
