@@ -3,7 +3,7 @@
   color: azure;
   background-position: center;
   width: 100%;
-  // display: flex;
+  display: flex;
   // justify-content: center;
   align-items: center;
   font-size: 31px;
@@ -169,4 +169,5 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  width: 100%;
 }

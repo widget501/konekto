@@ -1,9 +1,9 @@
 <%= turbo_frame_tag :topic_page do %>
-<div class="card">
+
 <p>
   <%= @post.user.user_name %>
 </p>
-<div class="card-fg-show">
+
 <p>
   <strong>Topic:</strong>
   <%= @post.topic.title %>
@@ -14,7 +14,7 @@
   <%= @post.content %>
 </p>
 
-<div class="card-fg-comments">
+
 <% @comments.each do |comment| %>
   <div class="comment">
     <div class="comment-content">
@@ -25,8 +25,6 @@
     </div>
   </div>
 <% end %>
-  </div>
-</div>
 
 <% if @post.likers.include?(current_user) %>
     <%= button_to 'unlike', unlike_post_path(@post), method: :delete  %>
@@ -45,7 +43,6 @@
   </div>
 
 
-<%= link_to "COMMENT", new_post_comment_path(@post), class: 'btn', style: 'background-color: #86D293; color: white;' %>
+<%= link_to "COMMENT", new_post_comment_path(@post), class: 'btn', style: 'background-color: #86D293; color: white;', data: {turbo:false}%>
 <%= link_to " Back", topic_path(@topic) %>
-</div>
 <% end %>
