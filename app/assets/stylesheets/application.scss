@@ -16,7 +16,7 @@
 body {
   min-height:100vh;
   color: $font-white !important;
-  background-color: #87CEEB !important;
+  background-color: #90cfe7 !important;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,10 +32,11 @@ html {
 a {
   color: rgb(130, 209, 213)!important;
   text-decoration: none;
+  // font-size: 20px;
 }
 
 .scrollable-container {
-  height: 120vh;
+  height: 160vh;
   // width: 33%;
   overflow-y: auto;
   // scrollbar-width: thin;
@@ -52,7 +53,7 @@ a {
 }
 
 .scrollable-container::-webkit-scrollbar-thumb {
-  background-color: darkgray;
+  background-color: rgb(96, 223, 138);
   border-radius: 4px;
 }
 
