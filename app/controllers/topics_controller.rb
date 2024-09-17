@@ -22,8 +22,10 @@ class TopicsController < ApplicationController
   
   def show
     @topic = Topic.find(params[:id])
-    @category = @topic.category
     @posts = @topic.posts
+    @category = @topic.category
+    @topics = @category.topics
+
   end
 
   def new

@@ -75,6 +75,70 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.card-fg-show {
+  background-color: #133a3f;
+  // color: azure;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  // font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-fg-comments {
+  background-color: #133a3f;
+  // color: azure;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  // font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  padding: 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #133a3f;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px;
+  background-color: #9cd7df;
+}
+
+.comment-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-user {
+  font-weight: bold;
+  color: #133a3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h2 {
   font-size: 40px;
   color: rgb(161, 218, 199);
@@ -98,4 +162,11 @@ h2 {
 .icon-space {
   margin-right: 10px;
   color: rgb(46, 223, 140);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
 }

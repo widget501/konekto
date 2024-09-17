@@ -31,6 +31,9 @@ class PostsController < ApplicationController
   # GET my specific posts/1
   def show
     @comments = @post.comments
+    @topic = @post.topic
+    @topics = @topic.category.topics
+    @category = @topic.category
   end
 
   # GET me creating a new post /posts/new
