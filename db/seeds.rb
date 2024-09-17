@@ -44,7 +44,7 @@ users << User.create!(
 users << User.create!(
   user_name: "jp",
   email: "jp@example.com",
-  password: "password",
+  password: "jp@example.com",
   bio: "Bio for JP"
 )
 
