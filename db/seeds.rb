@@ -7,6 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
 puts "Clearing database..."
 Like.destroy_all
 Comment.destroy_all
@@ -19,21 +21,19 @@ puts "database cleared"
 
 puts "Seeding database..."
 # db/seeds.rb
-# db/seeds.rb
 
-# db/seeds.rb
-
-# Create 15 users
+# Create 15 users with specific Faker details
 users = []
 15.times do |i|
   users << User.create!(
-    user_name: "user_#{i+1}",
-    email: "user_#{i+1}@example.com",
+    user_name: Faker::Internet.unique.username(specifier: 5..10),
+    email: Faker::Internet.unique.email,
     password: "password",
-    bio: "Bio for user_#{i+1}"
+    bio: Faker::Quote.famous_last_words # More interesting bios
   )
 end
 
+# Specific users
 users << User.create!(
   user_name: "xman",
   email: "xman@example.com",
@@ -67,33 +67,75 @@ categories.each do |category_title|
     user: users.sample
   )
 
-  # Create 20 topics per category
+  # Create 5 topics per category based on the category title
   5.times do |topic_index|
+    topic_title = case category_title
+    when "Tech" then Faker::Computer.platform
+    when "Health" then Faker::Cannabis.strain # Specific to healthcare terms
+    when "Education" then Faker::University.name
+    when "Science" then Faker::Science.element
+    when "Travel" then Faker::Mountain.name
+    when "Music" then Faker::Music.album
+    when "Sports" then Faker::Sports::Football.team
+    when "Movies" then Faker::Movie.title
+    when "Food" then Faker::Food.dish
+    when "Finance" then Faker::Bank.name
+    else Faker::Lorem.sentence # Fallback option
+    end
+
     topic = Topic.create!(
-      title: "Topic #{topic_index+1} in #{category.title}",
-      description: "Description for topic #{topic_index+1} in #{category.title}",
+      title: "#{topic_title} in #{category.title}",
+      description: "Discussion about #{topic_title} in the context of #{category.title}.",
       category: category,
       user: users.sample,
       by_ai: [true, false].sample
     )
     puts "Topic created"
 
-    # Create 50 posts per topic
+    # Create 5 posts per topic based on category title
     5.times do |post_index|
+      post_content = case category_title
+      when "Tech" then Faker::ProgrammingLanguage.name + " is evolving rapidly."
+      when "Health" then Faker::Cannabis.strain + " is a common treatment."
+      when "Education" then "Education at " + Faker::University.name + " is top-notch."
+      when "Science" then Faker::Science.scientist + " discovered new data on " + Faker::Science.element
+      when "Travel" then "Exploring the mountains of " + Faker::Mountain.name + " was breathtaking."
+      when "Music" then "The latest album from " + Faker::Music.band + " is a must-listen."
+      when "Sports" then "The team " + Faker::Sports::Football.team + " won the championship."
+      when "Movies" then "Watching " + Faker::Movie.title + " was an amazing experience."
+      when "Food" then Faker::Food.dish + " is my favorite dish of all time!"
+      when "Finance" then "Managing finances with " + Faker::Bank.name + " services is seamless."
+      else "Content of post #{post_index+1} in #{topic.title}."
+      end
+
       post = Post.create!(
-        content: "Content of post #{post_index+1} in #{topic.title}",
+        content: post_content,
         topic: topic,
-        user: users.sample,  # Randomly assign a user as the author
+        user: users.sample,
         by_ai: [true, false].sample
       )
       puts "Post created"
 
-      # Create 10 comments per post
+      # Create 5 comments per post based on random quotes matching the category
       5.times do |comment_index|
+        comment_content = case category_title
+        when "Tech" then Faker::Quote.famous_last_words
+        when "Health" then Faker::TvShows::DrWho.quote
+        when "Education" then Faker::Quote.matz # A famous Ruby creator quote
+        when "Science" then Faker::TvShows::BigBangTheory.quote
+        when "Travel" then Faker::Movies::HarryPotter.quote
+        when "Music" then Faker::Music::PearlJam.song
+        when "Sports" then Faker::TvShows::GameOfThrones.quote
+        when "Movies" then Faker::Movies::StarWars.quote
+        when "Food" then Faker::TvShows::Friends.quote # Friends had many food-related scenes
+        when "Finance" then Faker::Quotes::Shakespeare.king_richard_iii_quote
+        else "Comment #{comment_index+1} on post #{post.content.truncate(30)}"
+        end
+
         Comment.create!(
-          content: "Comment #{comment_index+1} on post #{post.content.truncate(30)}",
+          content: comment_content,
           post: post,
-          user: users.sample # Randomly assign a user to comment
+          user: users.sample
         )
       end
 
@@ -102,7 +144,7 @@ categories.each do |category_title|
         Like.create!(user: user, post: post)
       end
 
-      puts "commented and liked"
+      puts "Commented and liked"
     end
   end
 end
