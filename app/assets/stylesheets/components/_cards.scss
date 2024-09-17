@@ -6,7 +6,7 @@
   // display: flex;
   // justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 31px;
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
@@ -73,4 +73,29 @@
   margin: 20px 0;
   box-sizing: border-box;
   transition: transform 0.3s, box-shadow 0.3s;
+}
+
+h2 {
+  font-size: 40px;
+  color: rgb(161, 218, 199);
+  text-align: left;
+}
+
+.category-div {
+  padding: 40px;
+}
+
+.post-div {
+  padding: 40px;
+}
+
+.card-fg p {
+  font-size: 20px;
+  color: rgb(176, 212, 200);
+  font-weight: bolder;
+}
+
+.icon-space {
+  margin-right: 10px;
+  color: rgb(46, 223, 140);
 }
