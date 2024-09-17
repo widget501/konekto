@@ -26,4 +26,5 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:new, :create]
   end
+  get 'new_ai_topic', to: 'topics#new_ai_topic', as: 'new_ai_topic'
 end
