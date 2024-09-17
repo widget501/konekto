@@ -1,4 +1,28 @@
-<div class="card">
+<%= turbo_frame_tag :topic_page do %>
+<div class="container">
+  <div class="card topics-card">
+    <h1><%= @category.title %></h1>
+
+    <ul>
+      <% if @topics.present? %>
+        <% @topics.each do |topic| %>
+          <div class="card-fg">
+            <li>
+              <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance } %>
+            </li>
+          </div>
+        <% end %>
+      <% else %>
+        <li>No topics available</li>
+      <% end %>
+    </ul>
+
+    <%= link_to 'CATEGORY', categories_path, class: 'btn', style: 'background-color: #86D293; color: azure;' %>
+    <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn', style: 'background-color: #86D293; color: azure;' %>
+  </div>
+
+  <div class="card posts-card">
+    <div class="card">
   <h1>Topic</h1>
 
   <p>
@@ -16,3 +40,6 @@
   <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success' %>
   <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
 </div>
+  </div>
+</div>
+<% end %>

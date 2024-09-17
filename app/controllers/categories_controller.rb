@@ -5,16 +5,16 @@ class CategoriesController < ApplicationController
     @posts = Post.all
 
     @scroll_posts = Post.limit(10)
-    respond_to do |format|
-      format.html
-      format.json { render json: { html: render_to_string(partial: 'categories/post', collection: @scroll_posts, formats: [:html]) } }
-    end
   end
 
   def show
     @category = Category.find(params[:id])
     @topics = @category.topics
     @topic = @topics.find(params[:topic_id]) if params[:topic_id]
+    respond_to do |format|
+      format.turbo_stream
+      format.html
+    end
   end
 
   def new

@@ -3,12 +3,16 @@
     <h1><%= @category.title %></h1>
 
     <ul>
-      <% @topics.each do |topic| %>
-        <div class="card-fg">
-          <li>
-            <%= link_to topic.title, topic_path(topic), data: { turbo_frame: "posts" } %>
-          </li>
-        </div>
+      <% if @topics.present? %>
+        <% @topics.each do |topic| %>
+          <div class="card-fg">
+            <li>
+              <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance } %>
+            </li>
+          </div>
+        <% end %>
+      <% else %>
+        <li>No topics available</li>
       <% end %>
     </ul>
 
@@ -17,12 +21,6 @@
   </div>
 
   <div class="card posts-card">
-  <%= turbo_frame_tag "posts" do %>
-    <% if @topic %>
-      <%= render @topic.posts %>
-    <% else %>
-      <p>No posts available.</p>
-    <% end %>
-  <% end %>
-</div>
+    Select a Topic to view details
+  </div>
 </div>

@@ -1,9 +1,0 @@
-<%= turbo_stream.replace "posts" do %>
-  <div id="posts">
-    <ul>
-      <% @posts.each do |post| %>
-        <li><%= post.title %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
