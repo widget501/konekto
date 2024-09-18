@@ -6,8 +6,8 @@
 <%= link_to "Generate Interesting Topic", new_ai_topic_path(category: @category) %>
   <%= render "topics/list", topics:@topics %>
 
-    <%= link_to 'CATEGORY', categories_path, class: 'btn', style: 'background-color: #86D293; color: azure;' %>
-    <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn', style: 'background-color: #86D293; color: azure;' %>
+    <%= link_to 'CATEGORY', categories_path, class: 'btn btn-success' %>
+    <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn btn-success' %>
   </div>
 
   <div class="card posts-card">

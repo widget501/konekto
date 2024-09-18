@@ -8,21 +8,22 @@
   <strong>Topic:</strong>
   <%= @post.topic.title %>
 </p>
+</div>
 
+<div class="card-fg">
 <p>
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
-
+</div>
 
 <% @comments.each do |comment| %>
-  <div class="comment">
-    <div class="comment-content">
-      <%= comment.content %>
-    </div>
-    <div class="comment-user">
-      <%= comment.user.user_name %>
-    </div>
+<div class="card-fg">
+  <p>
+  <%= comment.content %>
+  <%= comment.user.user_name %>
+  <hr>
+  </p>
   </div>
 <% end %>
 
@@ -41,7 +42,6 @@
   <% end %>
 </p>
   </div>
-
 
 <%= link_to "COMMENT", new_post_comment_path(@post), class: 'btn', style: 'background-color: #86D293; color: white;', data: {turbo:false}%>
 <%= link_to " Back", topic_path(@topic) %>
