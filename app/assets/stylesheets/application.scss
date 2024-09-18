@@ -15,7 +15,7 @@
 
 body {
   min-height:100vh;
-  color: $font-white !important;
+  color: black !important;
   background-color: rgb(96, 223, 138) !important;
   display: flex;
   flex-direction: column;
@@ -30,8 +30,9 @@ html {
 }
 
 a {
-  color: rgb(67, 212, 133)!important;
+  color: rgb(67, 212, 133);
   text-decoration: none;
+  font-family:  "Nunito", "Helvetica", "sans-serif";
   // font-size: 20px;
 }
 

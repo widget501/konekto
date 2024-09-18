@@ -1,11 +1,11 @@
 .card {
   background-color: rgb(96, 223, 138);
-  color: azure;
+  color: rgb(2, 14, 14);
   background-position: center;
   width: 100%;
   display: flex;
   // justify-content: center;
-  align-items: center;
+  // align-items: center;
   font-size: 31px;
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -26,7 +26,7 @@
   margin-top: 0;
   font-size: 60px;
   font-weight: bolder;
-  color: rgb(161, 218, 199);
+  color: rgb(2, 14, 10);
   }
 
 .card ul {
@@ -161,7 +161,7 @@ h2 {
 
 .icon-space {
   margin-right: 10px;
-  color: rgb(46, 223, 140);
+  color: rgb(46, 217, 223);
 }
 
 .container {
@@ -174,8 +174,59 @@ h2 {
 
 .navbar .form-control {
   width: auto;
-  background-color: white;
+  background-color: rgb(166, 247, 233);
   color: black;
   border: 1px solid #7c7777;
   margin-right: 10px;
+}
+
+.search-button:hover {
+  background-color: #32d470;
+}
+
+.card.topics-card h1 {
+  font-size: 40px;
+  color: rgb(15, 22, 20);
+  text-align: left;
+}
+
+.black-link-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  }
+
+.black-link {
+  color: rgb(140, 241, 233);
+  text-decoration: none;
+  border: solid 1px #133a3f;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 8px;
+  margin: 4px;
+  background-color: #133a3f;
+  text-align: center;
+  box-shadow: #addabf;
+  width: 100%;
+}
+
+.black-link:hover {
+  color: rgb(67, 212, 133);
+}
+
+.spacing {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+}
+
+.form-control {
+  width: 100%;
+  background-color: rgb(203, 226, 222);
+  color: black;
+  border: 1px solid #7c7777;
+  margin-right: 10px;
+
 }
