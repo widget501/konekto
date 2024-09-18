@@ -1,45 +1,32 @@
-<%= turbo_frame_tag :topic_page do %>
 <div class="container">
   <div class="card topics-card">
     <h1><%= @category.title %></h1>
 
-    <ul>
-      <% if @topics.present? %>
-        <% @topics.each do |topic| %>
-          <div class="card-fg">
-            <li>
-              <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance } %>
-            </li>
-          </div>
-        <% end %>
-      <% else %>
-        <li>No topics available</li>
-      <% end %>
-    </ul>
+
+<%= link_to "Generate Interesting Topic", new_ai_topic_path(category: @category) %>
+  <%= render "topics/list", topics:@topics %>
 
     <%= link_to 'CATEGORY', categories_path, class: 'btn btn-success' %>
     <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn btn-success' %>
   </div>
 
   <div class="card posts-card">
-    <div class="card">
-  <h1>Topic</h1>
 
+<%= turbo_frame_tag :topic_page do %>
   <p>
     <strong>Title:</strong>
     <%= @topic.title %>
   </p>
 
   <% @posts.each do |post| %>
-  <div class="card-fg">
+
     <%= link_to post.content, post_path(post) %>
-  </div>
+
   <% end %>
 
   <br>
-  <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success' %>
+  <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success', data: {turbo:false} %>
   <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
-</div>
+<% end %>
   </div>
 </div>
-<% end %>

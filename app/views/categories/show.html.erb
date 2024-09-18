@@ -3,7 +3,6 @@
     <h1><%= @category.title %></h1>
 
 <%= link_to "Generate Interesting Topic", new_ai_topic_path(category: @category) %>
-
     <ul>
       <% if @topics.present? %>
         <% @topics.each do |topic| %>
@@ -18,6 +17,7 @@
       <% end %>
     </ul>
 
+  <%= render "topics/list", topics:@topics %>
 
     <%= link_to 'CATEGORY', categories_path, class: 'btn btn-success' %>
     <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn btn-success' %>

@@ -1,8 +1,9 @@
-<div class="card">
+<%= turbo_frame_tag :topic_page do %>
+
 <p>
   <%= @post.user.user_name %>
 </p>
-<div class="card-fg">
+
 <p>
   <strong>Topic:</strong>
   <%= @post.topic.title %>
@@ -42,7 +43,6 @@
 </p>
   </div>
 
-
-<%= link_to "COMMENT", new_post_comment_path(@post), class: 'btn', style: 'background-color: #86D293; color: white;' %>
-<%= link_to 'BACK', root_path, class: 'btn', style: 'background-color: #86D293; color: white;' %>
-</div>
+<%= link_to "COMMENT", new_post_comment_path(@post), class: 'btn', style: 'background-color: #86D293; color: white;', data: {turbo:false}%>
+<%= link_to " Back", topic_path(@topic) %>
+<% end %>
