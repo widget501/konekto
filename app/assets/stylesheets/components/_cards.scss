@@ -1,5 +1,5 @@
 .card {
-  background-color: #133a3f;
+  background-color: rgb(96, 223, 138);
   color: azure;
   background-position: center;
   width: 100%;
@@ -10,7 +10,7 @@
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(6, 7, 7, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 30px 0;
   box-sizing: border-box;
@@ -57,7 +57,7 @@
 }
 
 .card-fg {
-  background-color: #133a3f;
+  background-color: rgb(7, 13, 14);
   // color: azure;
   background-position: center;
   width: 100%;
@@ -68,7 +68,7 @@
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(2, 2, 2, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
@@ -76,7 +76,7 @@
 }
 
 .card-fg-show {
-  background-color: #133a3f;
+  background-color: white;
   // color: azure;
   background-position: center;
   width: 100%;
@@ -88,7 +88,7 @@
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(38, 45, 48, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
@@ -96,7 +96,7 @@
 }
 
 .card-fg-comments {
-  background-color: #133a3f;
+  background-color: white;
   // color: azure;
   background-position: center;
   width: 100%;
@@ -108,7 +108,7 @@
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(30, 32, 32, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
@@ -141,7 +141,7 @@
 
 h2 {
   font-size: 40px;
-  color: rgb(161, 218, 199);
+  color: rgb(15, 22, 20);
   text-align: left;
 }
 
@@ -170,4 +170,12 @@ h2 {
   align-items: flex-start;
   gap: 20px;
   width: 100%;
+}
+
+.navbar .form-control {
+  width: auto;
+  background-color: white;
+  color: black;
+  border: 1px solid #7c7777;
+  margin-right: 10px;
 }
