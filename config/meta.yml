@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "iKonekt"
+meta_title: "iKonekt - Like-mindedness"
+meta_description: "A community of like-mindeds; where we connect, share, learn and grow"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account" # required for Twitter Cards
