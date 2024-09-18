@@ -1,0 +1,11 @@
+<turbo-stream target="comments-<%= @post.id %>" action="append">
+  <template>
+    <div id="comment-<%= @comment.id %>" class="comment">
+      <small>
+        <strong><%= @comment.user.user_name %></strong>
+        <i><%= @comment.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      </small>
+      <p><%= @comment.content %></p>
+    </div>
+  </template>
+</turbo-stream>
