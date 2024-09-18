@@ -15,9 +15,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-        <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form action="/search" method="get">
+        <input type="text" name="query" placeholder="Search..." value="<%= params[:query] %>">
+        <button type="submit">Search</button>
         </form>
           <li class="nav-item active">
             <%= link_to "HOME", root_path, class: "nav-link" %>

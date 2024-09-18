@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/index'
   devise_for :users
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -27,4 +28,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
   get 'new_ai_topic', to: 'topics#new_ai_topic', as: 'new_ai_topic'
+  get 'search', to: 'search#index'
 end
