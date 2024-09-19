@@ -1,13 +1,10 @@
-<ul>
   <% if topics.present? %>
     <% topics.each do |topic| %>
-      <div class="card-fg">
-        <li>
+      <div class="card-fg-small">
           <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance } %>
-        </li>
+          
       </div>
     <% end %>
   <% else %>
-    <li>No topics available</li>
+    <h1>No topics available</h1>
   <% end %>
-</ul>
