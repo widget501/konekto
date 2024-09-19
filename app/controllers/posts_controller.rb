@@ -9,18 +9,24 @@ class PostsController < ApplicationController
       @post.likes.create(user: current_user)
       flash[:notice] = 'Post has been liked'
     end
-    redirect_to @post
+    redirect_to @post, allow_other_host: true
   end
 
   def unlike
     like = @post.likes.find_by(user: current_user)
+
     if like
-      like.destroy
-      flash[:notice] = 'You have unliked this post'
+      if like.destroy
+        flash[:notice] = 'You have unliked this post.'
+      else
+        flash[:alert] = 'There was an error unliking this post. Please try again.'
+      end
     else
-      flash[:notice] = 'You have not liked this post'
+      flash[:notice] = 'You have not liked this post.'
     end
-    redirect_to @post
+
+    redirect_to @post, allow_other_host: true
+  
   end
 
   # GET  all my posts

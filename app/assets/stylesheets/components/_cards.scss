@@ -1,18 +1,39 @@
 .card {
-  background-color: #133a3f;
-  color: azure;
+  background-color: #d2e7d6;
+  color: rgb(2, 14, 14);
   background-position: center;
   width: 100%;
-  // display: flex;
+  display: flex;
   // justify-content: center;
-  align-items: center;
+  // align-items: center;
   font-size: 31px;
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(6, 7, 7, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 30px 0;
+  box-sizing: border-box;
+  // transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-post-content {
+  background-color: #133a3f;
+  color: rgb(255, 255, 255);
+  background-position: center;
+  width: 100%;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  text-align: center;
+  font-size: 31px;
+  // font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  box-shadow: rgba(6, 7, 7, 0.99) 0px 0px 15px;
+  padding: 20px;
+  margin: 30px 0;
+  // margin-right: 40%;
   box-sizing: border-box;
   // transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -26,7 +47,7 @@
   margin-top: 0;
   font-size: 60px;
   font-weight: bolder;
-  color: rgb(161, 218, 199);
+  color: rgb(2, 14, 10);
   }
 
 .card ul {
@@ -35,6 +56,14 @@
   }
 
 .card-fg li {
+  margin: 8px 0;
+  color: rgb(176, 212, 200);
+  font-weight: bolder;
+  list-style: none;
+  text-align: center;
+}
+
+.card-fg-comment li {
   margin: 8px 0;
   color: rgb(176, 212, 200);
   font-weight: bolder;
@@ -57,7 +86,7 @@
 }
 
 .card-fg {
-  background-color: #133a3f;
+  background-color: rgb(7, 13, 14);
   // color: azure;
   background-position: center;
   width: 100%;
@@ -68,15 +97,34 @@
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(2, 2, 2, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.card-fg-comment {
+  background-color: rgb(7, 13, 14);
+  // color: azure;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  // font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  box-shadow: rgba(2, 2, 2, 0.99) 0px 0px 15px;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
 .card-fg-show {
-  background-color: #133a3f;
+  background-color: white;
   // color: azure;
   background-position: center;
   width: 100%;
@@ -88,7 +136,7 @@
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(38, 45, 48, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
@@ -96,7 +144,7 @@
 }
 
 .card-fg-comments {
-  background-color: #133a3f;
+  background-color: white;
   // color: azure;
   background-position: center;
   width: 100%;
@@ -108,7 +156,7 @@
   // font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 8px;
-  box-shadow: rgba(22, 167, 225, 0.99) 0px 0px 15px;
+  box-shadow: rgba(30, 32, 32, 0.99) 0px 0px 15px;
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
@@ -141,7 +189,7 @@
 
 h2 {
   font-size: 40px;
-  color: rgb(161, 218, 199);
+  color: rgb(15, 22, 20);
   text-align: left;
 }
 
@@ -158,10 +206,21 @@ h2 {
   color: rgb(176, 212, 200);
   font-weight: bolder;
 }
+.card-fg p {
+  font-size: 20px;
+  color: rgb(176, 212, 200);
+  font-weight: bolder;
+}
+
+.card-fg-comment p {
+  font-size: 20px;
+  color: rgb(176, 212, 200);
+  font-weight: bolder;
+}
 
 .icon-space {
   margin-right: 10px;
-  color: rgb(46, 223, 140);
+  color: rgb(46, 217, 223);
 }
 
 .container {
@@ -169,4 +228,83 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
+  width: 100%;
 }
+
+.navbar .form-control {
+  width: auto;
+  background-color: rgb(166, 247, 233);
+  color: black;
+  border: 1px solid #7c7777;
+  margin-right: 10px;
+}
+
+.search-button:hover {
+  background-color: #32d470;
+}
+
+.card.topics-card h1 {
+  font-size: 40px;
+  color: rgb(15, 22, 20);
+  text-align: left;
+}
+
+.black-link-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  }
+
+.black-link {
+  color: rgb(140, 241, 233);
+  text-decoration: none;
+  border: solid 1px #133a3f;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 8px;
+  margin: 4px;
+  background-color: #133a3f;
+  text-align: center;
+  box-shadow: #addabf;
+  width: 100%;
+}
+
+.black-link:hover {
+  color: rgb(67, 212, 133);
+}
+
+.spacing {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+}
+
+.form-control {
+  width: 100%;
+  background-color: rgb(203, 226, 222);
+  color: black;
+  border: 1px solid #7c7777;
+  margin-right: 10px;
+
+}
+
+.topic-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.topic-button {
+  border: solid 1px black;
+  background-color: #133a3f;
+  width: 30%;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  }

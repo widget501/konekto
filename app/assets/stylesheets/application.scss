@@ -15,8 +15,8 @@
 
 body {
   min-height:100vh;
-  color: $font-white !important;
-  background-color: #90cfe7 !important;
+  color: black !important;
+  background-color: rgb(96, 223, 138) !important;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -30,13 +30,14 @@ html {
 }
 
 a {
-  color: rgb(130, 209, 213)!important;
+  color: rgb(67, 212, 133);
   text-decoration: none;
+  font-family:  "Nunito", "Helvetica", "sans-serif";
   // font-size: 20px;
 }
 
 .scrollable-container {
-  height: 160vh;
+  height: 65vh;
   // width: 33%;
   overflow-y: auto;
   // scrollbar-width: thin;
@@ -61,3 +62,24 @@ a {
   display : grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.btn-custom {
+  background-color: #007bff; /* Primary color */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-custom-danger {
+  background-color: #dc3545; /* Danger color */
+  color: white;
+}
+
+// .top-of-posts {
+//   background-color: #f8f9fa; /* Light grey */
+//   border: 1px solid #ced4da; /* Light border */
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+// }

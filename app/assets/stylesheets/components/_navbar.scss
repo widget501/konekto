@@ -1,6 +1,6 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background-color: rgb(15, 46, 50);
+  justify-content: space-evenly;
+  background-color: rgb(7, 13, 14);
   width: 100%;
   padding: 10px 0;
 }
@@ -20,3 +20,15 @@ font-weight: bolder;
 color: rgb(161, 218, 199);
 }
 
+.dropdown-menu {
+  position: absolute;
+  left: -120px !important; /* Adjust the value as needed */
+}
+
+.dropdown-item:hover {
+background-color: aquamarine;
+}
+
+.dropdown-item {
+  background-color: rgb(182, 250, 227);
+}

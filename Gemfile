@@ -57,6 +57,7 @@ gem "ostruct", "~> 0.6.0"
 gem 'hotwire-rails'
 # gem 'acts_as_votable'
 gem "ruby-openai"
+gem "pg_search"
 
 group :development, :test do
   gem "dotenv-rails"
