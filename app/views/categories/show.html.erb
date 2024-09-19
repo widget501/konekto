@@ -1,29 +1,32 @@
-<div class="container">
-  <div class="card topics-card">
-    <%= link_to "Generate Interesting Topic", new_ai_topic_path(category: @category), class: "black-link"%>
-    <div class="scrollable-container">
-      <div class="scrollable-content">
-        <ul>
-          <% if @topics.present? %>
-            <% @topics.each do |topic| %>
-              <div class="card-fg">
-                <li>
-                  <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance }%>
-                </li>
-              </div>
-            <% end %>
-          <% else %>
-            <li>No topics available</li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div class="topic-buttons">
-      <%= link_to 'CATEGORY', categories_path, class: "topic-button"%>
-      <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: "topic-button" %>
-    </div>
+<!--<div class="container">-->
+<!--<div class="card topics-card">-->
+<h1 class="text-center">Explore topics in <%= @category.title %></h1>
+<div class="topic-buttons">
+  <%#= link_to 'CATEGORY', categories_path, class: "topic-button"%>
+  <%= link_to 'Add a topic', new_category_topic_path(@category), class: "black-link" %>
+  <%= link_to "Generate a topic with AI", new_ai_topic_path(category: @category), class: "black-link"%>
+</div>
+<br>
+<div class="scrollable-container">
+  <div class="scrollable-content">
+    <!--<ul>-->
+    <% if @topics.present? %>
+      <% @topics.each do |topic| %>
+        <div class="card-fg category-div">
+          <!--<li>-->
+          <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance }%>
+          <!--</li>-->
+        </div>
+        <br>
+      <% end %>
+    <% else %>
+      <li>No topics available</li>
+    <% end %>
+    <!--</ul>-->
   </div>
-  <%# <div class="card posts-card">
+</div>
+<!--</div>-->
+<%# <div class="card posts-card">
     Select a Topic to view details
   </div> %>
-</div>
+<!--</div>-->
