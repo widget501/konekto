@@ -1,43 +1,45 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/dbsjj5ynm/image/upload/v1726238091/Untitled_design__3_-removebg-preview_brpdia.png", class: "avatar" %>
-    <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div>
-      <h1>I-KONEKT</h1>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <form action="/search" method="get" style="display: flex; align-items: center;">
-            <input type="text" name="query" placeholder="Search..." value="<%= params[:query] %>" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-right: 10px; flex: 1; background-color:rgb(203, 226, 222);">
-            <button type="submit" class="search-button" style="padding: 10px 20px; background-color: #133a3f; color: azure; border: none; border-radius: 4px; cursor: pointer; transition: background-color 1.3s;">Search</button>
-          </form>
-          <li class="nav-item active">
-            <%= link_to "HOME", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%# <%= link_to "LOGOUT", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://res.cloudinary.com/dbsjj5ynm/image/upload/v1726238091/Untitled_design__3_-removebg-preview_brpdia.png", class: "avatar", alt: "dropdown menu" %>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end; background-color:rgb(203, 226, 222);" aria-labelledby="navbarDropdown">
-              <%= link_to "CATEGORIES", categories_path, class: "dropdown-item" %>
-              <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+    <%#= link_to "#", class: "navbar-brand" do %>
+      <%= link_to "/", class: "navbar-brand" do %>
+        <%= image_tag "https://res.cloudinary.com/dbsjj5ynm/image/upload/v1726238091/Untitled_design__3_-removebg-preview_brpdia.png", class: "avatar" %>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div>
+        <h1>I-KONEKT </h1>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <% if user_signed_in? %>
+            <form action="/search" method="get" style="display: flex; align-items: center;">
+              <input type="text" name="query" placeholder="Search..." value="<%= params[:query] %>" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; margin-right: 10px; flex: 1; background-color:rgb(203, 226, 222);">
+              <button type="submit" class="search-button" style="padding: 10px 20px; background-color: #133a3f; color: azure; border: none; border-radius: 4px; cursor: pointer; transition: background-color 1.3s;">Search</button>
+            </form>
+            <li class="nav-item active">
+              <%= link_to "HOME", root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%# <%= link_to "LOGOUT", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%#= image_tag "https://res.cloudinary.com/dbsjj5ynm/image/upload/v1726238091/Untitled_design__3_-removebg-preview_brpdia.png", class: "avatar", alt: "dropdown menu" %>
+                <%= image_tag "hamburger-menu.png", class: "avatar", alt: "dropdown menu" %>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end; background-color:rgb(203, 226, 222);" aria-labelledby="navbarDropdown">
+                <%= link_to "CATEGORIES", categories_path, class: "dropdown-item" %>
+                <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
