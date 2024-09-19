@@ -21,17 +21,17 @@
     <% end %>
   </div>
   <% if @post.likers.include?(current_user) %>
-    <%= button_to 'Unlike', unlike_post_path(@post), class: "btn-custom btn-custom-danger", method: :delete %>
-  <% else %>
-    <%= button_to 'Like', like_post_path(@post), class: "btn-custom", method: :post %>
-  <% end %>
-  <div class="comment-like">
-    <p>
-      <% if @post.likers.count > 1 %>
-        <%= @post.likers.count %> likes
-      <% else %>
-        <%= @post.likers.count %> like
-      <% end %>
+  <%= button_to 'Unlike', unlike_post_path(@post), class: "btn-custom btn-custom-danger",method: :delete  %>
+<% else %>
+  <%= button_to 'Like', like_post_path(@post), class: "btn-custom", method: :post %>
+<% end %>
+
+<div class="comment-like">
+  <p>
+    <%= pluralize(@post.likers.count, 'like') %>
+  </p>
+</div>
+
     </p>
   </div>
   <!-- Comment Button -->
@@ -44,10 +44,4 @@
     <% end %>
   </div>
   <%= link_to " Back", topic_path(@topic) %>
-  <script>
-    document.getElementById('toggle-comment-form').addEventListener('click', function() {
-      var form = document.getElementById('comment-form');
-      form.style.display = form.style.display === 'none' ? 'block' : 'none';
-    });
-  </script>
-<% end %>
+  <% end %>

@@ -1,6 +1,5 @@
 <div class="container">
   <div class="card topics-card">
-    <h1><%= @category.title %></h1>
     <%= link_to "Generate Interesting Topic", new_ai_topic_path(category: @category), class: "black-link"%>
     <div class="scrollable-container">
       <div class="scrollable-content">
@@ -19,11 +18,12 @@
         </ul>
       </div>
     </div>
-    <%= render "topics/list", topics:@topics %>
-    <%= link_to 'CATEGORY', categories_path, class: 'btn btn-success' %>
-    <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn btn-success' %>
+    <div class="topic-buttons">
+      <%= link_to 'CATEGORY', categories_path, class: "topic-button"%>
+      <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: "topic-button" %>
+    </div>
   </div>
-  <div class="card posts-card">
+  <%# <div class="card posts-card">
     Select a Topic to view details
-  </div>
+  </div> %>
 </div>

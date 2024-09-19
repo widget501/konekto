@@ -2,12 +2,11 @@
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <h1>I-KONEKT</h1>
-      <% end %>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div>
-
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -23,10 +22,11 @@
             <%# <%= link_to "LOGOUT", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://res.cloudinary.com/dbsjj5ynm/image/upload/v1726238091/Untitled_design__3_-removebg-preview_brpdia.png", class: "avatar", alt: "dropdown menu" %>
+            <a href="/" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%#= image_tag "https://res.cloudinary.com/dbsjj5ynm/image/upload/v1726238091/Untitled_design__3_-removebg-preview_brpdia.png", class: "avatar", alt: "dropdown menu" %>
+              <%= image_tag "hamburger-menu.png", class: "avatar", alt: "dropdown menu" %>
             </a>
-            <div class="dropdown-menu dropdown-menu-end; background-color:rgb(203, 226, 222);" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu dropdown-menu-end; margin-left: -20px; background-color:rgb(203, 226, 222);" aria-labelledby="navbarDropdown">
               <%= link_to "CATEGORIES", categories_path, class: "dropdown-item" %>
               <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
@@ -40,4 +40,4 @@
       </ul>
     </div>
   </div>
-</div>
+</div>>

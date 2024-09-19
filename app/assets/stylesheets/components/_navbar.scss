@@ -19,3 +19,16 @@ font-size: 50px;
 font-weight: bolder;
 color: rgb(161, 218, 199);
 }
+
+.dropdown-menu {
+  position: absolute;
+  left: -120px !important; /* Adjust the value as needed */
+}
+
+.dropdown-item:hover {
+background-color: aquamarine;
+}
+
+.dropdown-item {
+  background-color: rgb(182, 250, 227);
+}
