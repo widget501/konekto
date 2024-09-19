@@ -1,32 +1,28 @@
-
-  <div class="card topics-card">
-
-<%= link_to "Generate Interesting Topic", new_ai_topic_path(category: @category), class: "black-link" %>
-<div class="scrollable-container">
-  <div class="scrollable-content">
-  <%= render "topics/list", topics:@topics %>
+<%# content_for :meta_title, "#{@topic.title} on #{DEFAULT_META["meta_product_name"]}" %>
+<%# content_for :meta_description, @topic.description %>
+<%# content_for :meta_image, cl_image_path(@topic.photo.path) %>
+<div class="card topics-card">
+  <%= link_to "Generate Interesting Topic", new_ai_topic_path(category: @category), class: "black-link" %>
+  <div class="scrollable-container">
+    <div class="scrollable-content">
+      <%= render "topics/list", topics:@topics %>
+    </div>
   </div>
-  </div>
-
-    <%= link_to 'CATEGORY', categories_path, class: 'btn btn-success' %>
-    <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn btn-success' %>
-  </div>
-
-  <div class="card posts-card spacing">
-
-<%= turbo_frame_tag :topic_page do %>
-  <p>
-    <%= @topic.title %>
-  </p>
-<div class="black-link-card">
-  <% @posts.each do |post| %>
-
-    <%= link_to post.content, post_path(post), class: "black-link" %>
-
+  <%= link_to 'CATEGORY', categories_path, class: 'btn btn-success' %>
+  <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn btn-success' %>
+</div>
+<div class="card posts-card spacing">
+  <%= turbo_frame_tag :topic_page do %>
+    <p>
+      <%= @topic.title %>
+    </p>
+    <div class="black-link-card">
+      <% @posts.each do |post| %>
+        <%= link_to post.content, post_path(post), class: "black-link" %>
+      <% end %>
+    </div>
+    <br>
+    <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success', data: {turbo:false} %>
+    <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
   <% end %>
 </div>
-  <br>
-  <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success', data: {turbo:false} %>
-  <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
-<% end %>
-  </div>

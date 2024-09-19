@@ -1,64 +1,53 @@
 <%= turbo_frame_tag :topic_page do %>
-
-<div>
-  <h3 class="mb-1"><%= @post.topic.title %></h3>
-  <h5 class="text-muted">Posted by <strong><%= @post.user.user_name %></strong></h5>
-</div>
-
-
-<div class="card-post-content">
-  <p>
-    <%= @post.content %>
-  </p>
-</div>
-
-  <div class="card">
-<% @comments.each do |comment| %>
-<div class="card-fg-comment">
-    <p>
-      <%= comment.content %>
-      <br>
-      <em>by <%= comment.user.user_name %></em>
-      <hr>
-    </p>
-    </div>
-<% end %>
+  <div>
+    <h3 class="mb-1"><%= @post.topic.title %></h3>
+    <h5 class="text-muted">Posted by <strong><%= @post.user.user_name %></strong></h5>
   </div>
-
-<% if @post.likers.include?(current_user) %>
-  <%= button_to 'Unlike', unlike_post_path(@post), class: "btn-custom btn-custom-danger", method: :delete %>
-<% else %>
-  <%= button_to 'Like', like_post_path(@post), class: "btn-custom", method: :post %>
-<% end %>
-
-<div class="comment-like">
-  <p>
-    <% if @post.likers.count > 1 %>
-      <%= @post.likers.count %> likes
-    <% else %>
-      <%= @post.likers.count %> like
+  <div class="card-post-content">
+    <p>
+      <%= @post.content %>
+    </p>
+  </div>
+  <div class="card">
+    <% @comments.each do |comment| %>
+      <div class="card-fg-comment">
+        <p>
+          <%= comment.content %>
+          <br>
+          <em>by <%= comment.user.user_name %></em>
+          <hr>
+        </p>
+      </div>
     <% end %>
-  </p>
-</div>
-
-<!-- Comment Button -->
-<button id="toggle-comment-form" class="btn btn-secondary">Comment</button>
-
-<!-- Comment Form (initially hidden) -->
-<div class="card" id="comment-form" style="display: none;">
-  <%= simple_form_for [@post, Comment.new] do |f| %>
-    <%= f.input :content, input_html: { class: 'form-control' } %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+  <% if @post.likers.include?(current_user) %>
+    <%= button_to 'Unlike', unlike_post_path(@post), class: "btn-custom btn-custom-danger", method: :delete %>
+  <% else %>
+    <%= button_to 'Like', like_post_path(@post), class: "btn-custom", method: :post %>
   <% end %>
-</div>
-
-<%= link_to " Back", topic_path(@topic) %>
-
-<script>
-  document.getElementById('toggle-comment-form').addEventListener('click', function() {
-    var form = document.getElementById('comment-form');
-    form.style.display = form.style.display === 'none' ? 'block' : 'none';
-  });
-</script>
-
+  <div class="comment-like">
+    <p>
+      <% if @post.likers.count > 1 %>
+        <%= @post.likers.count %> likes
+      <% else %>
+        <%= @post.likers.count %> like
+      <% end %>
+    </p>
+  </div>
+  <!-- Comment Button -->
+  <button id="toggle-comment-form" class="btn btn-secondary">Comment</button>
+  <!-- Comment Form (initially hidden) -->
+  <div class="card" id="comment-form" style="display: none;">
+    <%= simple_form_for [@post, Comment.new] do |f| %>
+      <%= f.input :content, input_html: { class: 'form-control' } %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <%= link_to " Back", topic_path(@topic) %>
+  <script>
+    document.getElementById('toggle-comment-form').addEventListener('click', function() {
+      var form = document.getElementById('comment-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
 <% end %>

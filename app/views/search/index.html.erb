@@ -1,25 +1,24 @@
-
 <div class="card">
-<% if @results.any? %>
-  <% @results.each do |result| %>
-    <% case result.searchable_type %>
-    <% when 'Post' %>
-    <div class="card-fg">
-      <p>Post: <%= result.searchable.content %></p>
-      <p><%= result.searchable.content %></p>
-      </div>
-    <% when 'Category' %>
-      <div class="card-fg">
-      <p>Category: <%= result.searchable.title %></p>
-</div>
-    <% when 'Topic' %>
-    <div class="card-fg">
-      <p>Topic: <%= result.searchable.title %></p>
-      <p><%= result.searchable.description %></p>
-      </div>
+  <% if @results.any? %>
+    <% @results.each do |result| %>
+      <% case result.searchable_type %>
+      <% when 'Post' %>
+        <div class="card-fg">
+          <p>Post: <%= result.searchable.content %></p>
+          <p><%= result.searchable.content %></p>
+        </div>
+      <% when 'Category' %>
+        <div class="card-fg">
+          <p>Category: <%= result.searchable.title %></p>
+        </div>
+      <% when 'Topic' %>
+        <div class="card-fg">
+          <p>Topic: <%= result.searchable.title %></p>
+          <p><%= result.searchable.description %></p>
+        </div>
+      <% end %>
     <% end %>
+  <% else %>
+    <p>No results found for '<%= params[:query] %>'</p>
   <% end %>
-<% else %>
-  <p>No results found for '<%= params[:query] %>'</p>
-<% end %>
 </div>
