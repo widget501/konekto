@@ -9,7 +9,7 @@ class PostsController < ApplicationController
       @post.likes.create(user: current_user)
       flash[:notice] = 'Post has been liked'
     end
-    redirect_to @post
+    redirect_to @post, allow_other_host: true
   end
 
   def unlike
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     else
       flash[:notice] = 'You have not liked this post'
     end
-    redirect_to @post
+    redirect_to @post, allow_other_host: true
   end
 
   # GET  all my posts
