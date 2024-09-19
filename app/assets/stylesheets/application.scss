@@ -12,17 +12,22 @@
 @import "components/index";
 @import "pages/index";
 
+.app-container {
+  margin: 0 auto;
+  padding: 2rem;
+  text-decoration: center;
+}
 
 body {
   min-height:100vh;
   color: black !important;
   background-color: rgb(96, 223, 138) !important;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0;
-  padding: 0;
-  overflow-y: auto;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // margin: 0;
+  // padding: 0;
+  // overflow-y: auto;
 }
 
 html {
@@ -61,6 +66,9 @@ a {
 .home-content {
   display : grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .btn-custom {
