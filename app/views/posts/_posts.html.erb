@@ -1,9 +1,7 @@
 <%= turbo_stream.replace "posts" do %>
-<% @posts.each do |post| %>
-
-  <div class="comment">
-    <p><%= post.content %></p>
-
-  </div>
-<% end %>
+  <% @posts.each do |post| %>
+    <div class="comment">
+      <p><%= post.content %></p>
+    </div>
+  <% end %>
 <% end %>
