@@ -25,7 +25,7 @@
         <% @posts.each do |post| %>
           <%= link_to post_path(post) do %>
             <div class="post">
-              <%= post.content %>
+              <%= post.content.truncate(100) %>
               <div class='d-flex'>
                 <br>
                 <i class="fa-solid fa-circle-plus m-3"></i>

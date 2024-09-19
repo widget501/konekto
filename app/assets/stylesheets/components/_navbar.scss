@@ -3,6 +3,8 @@
   background-color: rgb(7, 13, 14);
   width: 100%;
   padding: 10px 0;
+  font-family: sans-serif;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,22 +15,24 @@
   width: 60px;
 }
 
-.navbar-lewagon h1{
-margin-top: 10px;
-font-size: 50px;
-font-weight: bolder;
-color: rgb(161, 218, 199);
+.navbar-lewagon h1 {
+  margin-top: 10px;
+  font-size: 40px;
+  font-weight: bolder;
+  color: #a1dac7;
+  margin-left: 1rem;
 }
 
 .dropdown-menu {
   position: absolute;
-  left: -120px !important; /* Adjust the value as needed */
+  left: -120px !important;
+  /* Adjust the value as needed */
 }
 
 .dropdown-item:hover {
-background-color: aquamarine;
+  // background-color: aquamarine;
 }
 
 .dropdown-item {
-  background-color: rgb(182, 250, 227);
+  // background-color: rgb(182, 250, 227);
 }
