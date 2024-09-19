@@ -8,8 +8,10 @@
       <%= render "topics/list", topics:@topics %>
     </div>
   </div>
-  <%= link_to 'CATEGORY', categories_path, class: 'btn btn-success' %>
-  <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: 'btn btn-success' %>
+  <div class="topic-buttons">
+  <%= link_to 'CATEGORY', categories_path, class: "topic-button" %>
+  <%= link_to 'NEW TOPIC', new_category_topic_path(@category), class: "topic-button" %>
+</div>
 </div>
 <div class="card posts-card spacing">
   <%= turbo_frame_tag :topic_page do %>
@@ -22,7 +24,7 @@
       <% end %>
     </div>
     <br>
-    <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: 'btn btn-success', data: {turbo:false} %>
-    <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
+    <%= link_to 'CREATE POST',  new_topic_post_path(@topic), class: "topic-button", data: {turbo:false} %>
+    <%# <%= link_to 'BACK', root_path, class: 'btn btn-success'%>
   <% end %>
 </div>

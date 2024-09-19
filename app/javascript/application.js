@@ -35,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const autoScroll = () => {
     scrollContainer.scrollTop += speed
-    console.log("Big Nyash")
-    if (scrollContainer.scrollTop + scrollContainer.clientHeight >= scrollContainer.scrollHeight) {
+      if (scrollContainer.scrollTop + scrollContainer.clientHeight >= scrollContainer.scrollHeight) {
       scrollContainer.scrollTop = 0
     }
   };
