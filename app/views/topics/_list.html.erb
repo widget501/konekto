@@ -2,7 +2,8 @@
     <% topics.each do |topic| %>
       <div class="card-fg-small">
           <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance } %>
-          
+            <i class="fa-solid fa-robot small-icon"></i> 
+
       </div>
     <% end %>
   <% else %>
