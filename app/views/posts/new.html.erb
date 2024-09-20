@@ -1,5 +1,6 @@
-<div class="card">
-  <h1>NEW POST</h1>
+  <div class="form-container">
+  <h2>Join the conversation</h2>
+  <h3>add your voice to the discussion</h3>
   <%= simple_form_for([@topic, @post]) do |form| %>
     <% if @post.errors.any? %>
       <div id="error_explanation">
@@ -11,12 +12,11 @@
         </ul>
       </div>
     <% end %>
-    <%= form.input :content %>
+    <%= form.input :content, label: false %>
     <%# <%= form.association :topic, collection: Topic.all, label_method: :name, value_method: :id %>
     <%# <%= form.association :user, collection: User.all, label_method: :name, value_method: :id %>
     <div class="actions">
-      <%= form.button :submit, class: 'btn', style: 'background-color: #133a3f; color: white;' %>
-      <%= link_to 'Back', root_path, class: 'btn', style: 'background-color: #133a3f; color: white;' %>
+      <%= form.button :submit, class: 'black-link' %>
     </div>
   <% end %>
 </div>
