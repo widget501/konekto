@@ -1,25 +1,31 @@
 <%# <div class="header-container">
     <h1>I-KONEKT</h1>
   </div> %>
-<div class="home-content">
-  <ul>
+<div>
+  <h1 class="text-center mb-2">Explore topics by category</h1>
+  <br>
+  <div class="home-content">
+    <!--<ul>-->
     <% @categories.each do |category| %>
-      <div class="card-fg category-div">
-        <i class="<%= category_icon(category) %> icon-space"></i>
-        <li><%= link_to category.title, category_path(category) %></li>
-      </div>
-    <% end %>
-  </ul>
-  <div class="scrollable-container post-div">
-    <div class="scrollable-content">
-      <% @posts.shuffle.each do |post| %>
-        <div class="card-fg">
-          <%= link_to post_path(post) do %>
-            <%= post.content %>
-          <% end %>
-        </div>
-        <hr>
+      <%= link_to category_path(category), class:"card-fg category-div" do%>
+
+          <i class="<%= category_icon(category) %> icon-space"></i>
+          <%= category.title %>
+
       <% end %>
+    <% end %>
+    <!--</ul>-->
+    <!--<div class="scrollable-container post-div">
+        <div class="scrollable-content">
+          <%# @posts.shuffle.each do |post| %>-->
+    <!--        <div class="card-fg">-->
+    <%#= link_to post_path(post) do %>
+      <%#= post.content %>
+      <%# end %>
+      <!--        </div>
+            <hr>
+          <%# end %>-->
+      <!--    </div>
+      </div>-->
     </div>
   </div>
-</div>

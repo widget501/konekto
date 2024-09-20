@@ -1,4 +1,3 @@
-
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -13,40 +12,57 @@
 @import "pages/index";
 @import "comments/show";
 
+.app-container {
+  margin: 0 auto;
+  padding: 2rem;
+  text-decoration: center;
+}
+
+.width-container {
+  width: 80%;
+  margin: 0 auto;
+}
 
 body {
-  min-height:100vh;
+  min-height: 100vh;
   color: black !important;
-  background-color: #D1D8DF !important;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0;
-  padding: 0;
-  overflow-y: auto;
+  background-color: #d1d8df !important;
+
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+  // margin: 0;
+  // padding: 0;
+  // overflow-y: auto;
+  // a {
+  // }
+  a {
+    color: rgb(67, 212, 133);
+    text-decoration: none;
+    font-family: $body-font !important;
+    font-size: 1.2rem;
+    // font-size: 20px;
+  }
 }
 
 html {
   overflow-y: auto;
 }
 
-a {
-  color: rgb(67, 212, 133);
-  text-decoration: none;
-  font-family:  "Nunito", "Helvetica", "sans-serif";
-  // font-size: 20px;
-}
+
 
 .scrollable-container {
-  height: 65vh;
+  // height: 62vh;
   // width: 33%;
   overflow-y: auto;
   // scrollbar-width: thin;
+  padding: 40px;
+
 }
 
 .scrollable-content {
-  padding: 18px;
-  font-size: 22px;
+  // padding: 18px;
+  // font-size: 22px;
   overflow-y: auto;
 }
 
@@ -60,12 +76,16 @@ a {
 }
 
 .home-content {
-  display : grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .btn-custom {
-  background-color: #007bff; /* Primary color */
+  background-color: #007bff;
+  /* Primary color */
   color: white;
   border: none;
   padding: 8px 16px;
@@ -75,7 +95,8 @@ a {
 }
 
 .btn-custom-danger {
-  background-color: #dc3545; /* Danger color */
+  background-color: #dc3545;
+  /* Danger color */
   color: white;
 }
 
