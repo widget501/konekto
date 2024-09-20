@@ -1,0 +1,36 @@
+.comment-block {
+  text-align: start;
+
+  border-bottom: 1px solid black;
+  .comment-user {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px;
+
+  }
+
+  .comment-content {
+    font-size: 16px;
+    margin-bottom: 0px;
+
+
+  }
+
+}
+
+.container-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-scroll {
+  height: 68vh;
+  overflow-y: scroll;
+
+}
+
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

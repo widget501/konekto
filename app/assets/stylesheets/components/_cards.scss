@@ -1,5 +1,5 @@
 .card {
-  background-color: #d2e7d6;
+  background-color:#D1D8DF !important;
   color: rgb(2, 14, 14);
   background-position: center;
   width: 100%;
@@ -18,23 +18,17 @@
 }
 
 .card-post-content {
-  background-color: #133a3f;
-  color: rgb(255, 255, 255);
+  color: black;
   background-position: center;
   width: 100%;
-  display: flex;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  // display: flex;
   // justify-content: center;
   // align-items: center;
-  text-align: center;
-  font-size: 31px;
   // font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  box-shadow: rgba(6, 7, 7, 0.99) 0px 0px 15px;
-  padding: 20px;
-  margin: 30px 0;
+  // border-radius: 8px;
   // margin-right: 40%;
-  box-sizing: border-box;
   // transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -179,13 +173,13 @@
   align-items: center;
 }
 
-.comment-user {
-  font-weight: bold;
-  color: #133a3f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .comment-user {
+//   font-weight: bold;
+//   color: #133a3f;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 h2 {
   font-size: 40px;
@@ -231,14 +225,6 @@ h2 {
   width: 100%;
 }
 
-.navbar .form-control {
-  width: auto;
-  background-color: rgb(166, 247, 233);
-  color: black;
-  border: 1px solid #7c7777;
-  margin-right: 10px;
-}
-
 .search-button:hover {
   background-color: #32d470;
 }
@@ -281,14 +267,7 @@ h2 {
 
 }
 
-.form-control {
-  width: 100%;
-  background-color: rgb(203, 226, 222);
-  color: black;
-  border: 1px solid #7c7777;
-  margin-right: 10px;
 
-}
 
 .topic-buttons {
   display: flex;

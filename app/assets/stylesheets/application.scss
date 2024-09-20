@@ -11,12 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "comments/show";
 
 
 body {
   min-height:100vh;
   color: black !important;
-  background-color: rgb(96, 223, 138) !important;
+  background-color: #D1D8DF !important;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
