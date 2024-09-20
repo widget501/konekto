@@ -15,13 +15,16 @@
   </div>
   <div class="spacing">
     <%= turbo_frame_tag :topic_page do %>
-      <div class="d-flex justify-content-around">
+      <div class="container-post">
         <h1>
           <%= @topic.title %>
         </h1>
-        <%= link_to 'POST',  new_topic_post_path(@topic), class: "topic-button", data: {turbo:false} %>
       </div>
       <div class="black-link-card">
+        <div class="d-flex justify-content-between align-items-center mb-2" style="width:88%">
+          <h3>Some thoughts on this topic:</h3>
+            <%= link_to 'Add yours',  new_topic_post_path(@topic), class: "topic-button", data: {turbo:false} %>
+        </div>
         <% @posts.each do |post| %>
           <%= link_to post_path(post) do %>
             <div class="post">
@@ -37,7 +40,6 @@
         <% end %>
       </div>
       <br>
- 
     <% end %>
   </div>
 </div>
