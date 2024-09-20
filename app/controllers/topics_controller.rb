@@ -19,13 +19,12 @@ class TopicsController < ApplicationController
 
     redirect_to category_path(@category)
   end
-  
+
   def show
     @topic = Topic.find(params[:id])
     @posts = @topic.posts
     @category = @topic.category
     @topics = @category.topics
-
   end
 
   def new

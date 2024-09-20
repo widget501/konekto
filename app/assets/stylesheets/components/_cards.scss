@@ -34,6 +34,9 @@
   width: 100%;
   border-bottom: 1px solid black;
   font-size: 20px;
+  font-family: $body-font;
+  margin: 20px;
+  margin-bottom: 0px;
   // display: flex;
   // justify-content: center;
   // align-items: center;
@@ -110,13 +113,9 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.icon {
-  font-size: 16px;
-  margin: 8px;
-  position: relative;
-  right: -2px;
-  top: -16px;
-}
+
+
+
 
 .card-fg-small {
   background-color: #070d0e;
@@ -124,6 +123,17 @@
   box-shadow: rgba(2, 2, 2, 0.99) 0px 0px 4px;
   border-radius: 8px;
   margin-bottom: 16px;
+  position: relative;
+
+  .small-icon {
+    font-size: 16px;
+    // margin: 8px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    color: #42d485;
+  }
+}
   // color: azure;
   // background-position: center;
   // width: 100%;
@@ -142,16 +152,8 @@
   a {
     font-size: 1.2rem;
   }
-}
 
-.small-icon {
-  font-size: 16px;
-  margin: 8px;
-  position: relative;
-  right: 8px;
-  top: 8px;
-  color: #42d485;
-}
+
 
 .card-fg-comment {
   background-color: rgb(7, 13, 14);

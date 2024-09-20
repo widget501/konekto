@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :topic_page do %>
-  <div data-controller="comment-form" class="p-3">
+  <div data-controller="comment-form">
     <%# <div class="container-scroll"> %>
     <div class="container-post">
       <div class="d-flex justify-content-between">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <!-- Comments Section -->
-    <div class="mb-3">
+    <div class="comment-container">
       <% @comments.each do |comment| %>
         <div class="comment-block">
           <p class="comment-user"><%= comment.user.user_name %></p>
