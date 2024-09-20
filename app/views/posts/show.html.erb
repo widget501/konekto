@@ -1,47 +1,53 @@
 <%= turbo_frame_tag :topic_page do %>
-  <div>
-    <h3 class="mb-1"><%= @post.topic.title %></h3>
-    <h5 class="text-muted">Posted by <strong><%= @post.user.user_name %></strong></h5>
-  </div>
-  <div class="card-post-content">
-    <p>
-      <%= @post.content %>
-    </p>
-  </div>
-  <div class="card">
-    <% @comments.each do |comment| %>
-      <div class="card-fg-comment">
-        <p>
-          <%= comment.content %>
-          <br>
-          <em>by <%= comment.user.user_name %></em>
-          <hr>
-        </p>
+  <div data-controller="comment-form" class="p-3">
+    <%# <div class="container-scroll"> %>
+      <div class="container-post">
+        <div class="d-flex justify-content-between">
+          <h1>
+            <%= @post.topic.title %>
+          </h1>
+          <%= link_to topic_path(@topic)  do %>
+            <i class="fa-solid fa-arrow-left text-black"></i>
+          <% end %>
+        </div>
+        <!-- Back Link -->
+
+        <div class="card-post-content">
+          <p>
+            <%= @post.content %>
+          </p>
+        <div class="d-flex justify-content-between">
+        <h5 class="text-muted">Posted by <strong><%= @post.user.user_name %></strong></h5>
+          <% if @post.likers.include?(current_user) %>
+            <%= button_to unlike_post_path(@post), class: "btn-transparent", method: :delete do %>
+              <i class="fa-solid fa-heart"></i><span class="ps-1"><%= @post.likers.count %></span>
+            <% end %>
+          <% else %>
+            <%= button_to like_post_path(@post), class: "btn-transparent", method: :post do %>
+              <i class="fa-regular fa-heart"></i><span class="ps-1"><%= @post.likers.count %></span>
+            <% end %>
+          <% end %>
+        </div>
+        </div>
       </div>
-    <% end %>
-  </div>
-  <% if @post.likers.include?(current_user) %>
-  <%= button_to 'Unlike', unlike_post_path(@post), class: "btn-custom btn-custom-danger",method: :delete  %>
-<% else %>
-  <%= button_to 'Like', like_post_path(@post), class: "btn-custom", method: :post %>
-<% end %>
 
-<div class="comment-like">
-  <p>
-    <%= pluralize(@post.likers.count, 'like') %>
-  </p>
-</div>
-
-    </p>
-  </div>
-  <!-- Comment Button -->
-  <button id="toggle-comment-form" class="btn btn-secondary">Comment</button>
+    <!-- Comments Section -->
+    <div class="mb-3">
+      <% @comments.each do |comment| %>
+        <div class="comment-block">
+          <p class="comment-user"><%= comment.user.user_name %></p>
+          <p class="comment-content"><%= comment.content %></p>
+        </div>
+      <% end %>
+    </div>
+  <%# </div> %>
   <!-- Comment Form (initially hidden) -->
-  <div class="card" id="comment-form" style="display: none;">
+  <a class="topic-button mt-3" data-action="comment-form#reveal">COMMENT</a>
+  <div id="comment-form" class="d-none" data-comment-form-target="form">
     <%= simple_form_for [@post, Comment.new] do |f| %>
-      <%= f.input :content, input_html: { class: 'form-control' } %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= f.input :content, input_html: { class: 'form-control' }, label: false %>
+      <%= f.button :submit, class: 'topic-button' %>
     <% end %>
   </div>
-  <%= link_to " Back", topic_path(@topic) %>
-  <% end %>
+</div>
+<% end %>
