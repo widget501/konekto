@@ -13,14 +13,14 @@ puts "Seeding database..."
 users = []
 
 users << User.create!(
-  user_name: "xman",
+  user_name: "Xhanti",
   email: "xman@example.com",
   password: "password",
   bio: "Bio for Xhanti"
 )
 
 users << User.create!(
-  user_name: "jp",
+  user_name: "JP",
   email: "jp@example.com",
   password: "password",
   bio: "Bio for JP"
@@ -62,7 +62,7 @@ additional_users.each do |user_data|
 end
 
 # Predefined categories
-categories = ["Tech", "Health", "Education", "Science", "Travel", "Music", "Sports", "Movies", "Food", "Finance"]
+categories = ["Education", "Finance", "Food", "Health", "Movies", "Music", "Science", "Sports", "Tech", "Travel"]
 
 # Topics, posts, and comments for each category
 categories.each do |category_title|
@@ -95,9 +95,9 @@ categories.each do |category_title|
   when "Education"
     [
       "Online Learning vs Traditional: Which is Better?",
+      "Are Coding Bootcamps Worth It?",
       "How to Improve Access to Quality Education",
       "The Future of STEM Education",
-      "Are Coding Bootcamps Worth It?",
       "How VR is Being Used in Classrooms"
     ]
   when "Science"
@@ -180,7 +180,7 @@ categories.each do |category_title|
     ]
 
     # Expand unique_posts per category
-    10.times do |i|
+    15.times do |i|
       post_content = case category_title
       when "Tech"
         unique_posts[i % unique_posts.size]
@@ -200,13 +200,69 @@ categories.each do |category_title|
           "Coding bootcamps are all the rage, but do they really prepare students for real-world jobs?",
           "Virtual reality in education is cool, but do you think it’s a gimmick or a game-changer?"
         ][i % 5]
-      # Continue for each category
-      when "Science", "Travel", "Music", "Sports", "Movies", "Food", "Finance"
-        topics = [
-          # Add unique posts for each of these categories
-        ]
-      else
-        "General discussion on #{topic_title}"
+      when "Science"
+        [
+          "Climate change is a myth created by scientists for funding.",
+          "Vaccines should be a personal choice, not a mandate.",
+          "Space exploration is a waste of resources we could use on Earth.",
+          "GMOs are harmful and shouldn't be allowed in our food supply.",
+          "Evolution is just a theory and shouldn’t be taught in schools."
+        ][i % 5]
+      when "Travel"
+        [
+          "Tourism is destroying local cultures and ecosystems.",
+          "Air travel should be heavily taxed due to its carbon footprint.",
+          "Traveling to third-world countries is exploitative.",
+          "Cruises are terrible for the environment and should be banned.",
+          "People should stay in their own countries instead of moving around."
+        ][i % 5]
+      when "Music"
+        [
+          "Auto-tune has ruined the quality of modern music.",
+          "Streaming services are killing the music industry.",
+          "Classic rock is overrated and should be retired.",
+          "Most pop music today lacks any artistic value.",
+          "Rap music promotes harmful stereotypes and violence."
+        ][i % 5]
+      when "Sports"
+        [
+          "Professional athletes are overpaid for playing games.",
+          "Football causes too many injuries and should be banned.",
+          "Olympics are a waste of resources and should be discontinued.",
+          "Esports aren’t real sports and don’t deserve the same recognition.",
+          "Sports teams exploit fans with overpriced tickets and merchandise."
+        ][i % 5]
+      when "Movies"
+        [
+          "Superhero movies have ruined the film industry with their lack of creativity.",
+          "Hollywood is too focused on pushing political agendas instead of storytelling.",
+          "Remakes are lazy and disrespectful to the original films.",
+          "Independent films are superior to Hollywood blockbusters.",
+          "Movies should not include political or social messages."
+        ][i % 5]
+      when "Food"
+        [
+          "Veganism is unnatural and unhealthy in the long run.",
+          "Organic food is a scam; there's no real difference from regular food.",
+          "Processed foods are just as good as fresh foods if you know how to balance.",
+          "Eating meat is essential for a healthy diet, plants can't provide all nutrients.",
+          "Fast food should be banned to prevent obesity."
+        ][i % 5]
+      when "Finance"
+        [
+          "Cryptocurrency is a bubble and will eventually crash.",
+          "The stock market is rigged for the rich and not for everyday people.",
+          "Universal basic income would ruin people’s work ethic.",
+          "Taxes should be drastically increased for the wealthy.",
+          "Debt is not necessarily a bad thing; it’s a tool for growth."
+        ][i % 5]
+      # # Continue for each category
+      # when  "Music", "Sports", "Movies", "Food", "Finance"
+      #   topics = [
+      #     # Add unique posts for each of these categories
+      #   ]
+      # else
+      #   "General discussion on #{topic_title}"
       end
 
       post = Post.create!(
@@ -217,14 +273,24 @@ categories.each do |category_title|
       )
 
       # Create comments for each post
-      10.times do
+      15.times do
         comment_content = [
           "I completely agree with you.",
           "This is so insightful!",
           "Wow, I hadn't thought of it that way before.",
           "Can you share more about this?",
-          "I have a different opinion, but I see your point."
-        ].sample
+          "I have a different opinion, but I see your point.",
+          "Wow, this is so inspiring! Thanks for sharing 😊.",
+          "I love your perspective on this topic, really insightful!",
+          "This made my day, thank you for posting it! 🌟",
+          "You always share such valuable content, keep it up!",
+          "Amazing! I never thought about it that way, thanks for opening my eyes.",
+          "Such a great post! I feel like I learned something new today.",
+          "Your posts always bring a smile to my face! 😊",
+          "This is exactly what I needed to see today, thank you!",
+          "You have such a positive energy, it really shines through in your posts!",
+          "Thanks for putting this out there, it's incredibly thoughtful and helpful!"
+          ].sample
 
         Comment.create!(
           content: comment_content,
