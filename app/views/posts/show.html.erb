@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :topic_page do %>
-  <div data-controller="comment-form">
+  <div>
     <%# <div class="container-scroll"> %>
     <div class="container-post">
       <div class="d-flex justify-content-between">
@@ -11,40 +11,47 @@
         <% end %>
       </div>
       <!-- Back Link -->
-        <div class="d-flex justify-content-between mt-2" style="width: 88%">
-          <h5 class="text-muted">Posted by <strong><%= @post.user.user_name %></strong></h5>
-          <div id="post_<%= @post.id %>_likes">
-            <%= turbo_frame_tag "post_#{@post.id}_likes" do %>
-              <%= render "posts/likes", post: @post %>
-            <% end %>
-          </div>
+      <div class="d-flex justify-content-between mt-2" style="width: 88%">
+        <h5 class="text-muted">Posted by <strong><%= @post.user.user_name %></strong></h5>
+        <div id="post_<%= @post.id %>_likes">
+          <%= turbo_frame_tag "post_#{@post.id}_likes" do %>
+            <%= render "posts/likes", post: @post %>
+          <% end %>
         </div>
-      <div class="card-post-content">
+      </div>
+      <div class="card-post-content d-flex">
+        <div class="avatar-container d-flex flex-column align-items-center " style="width:15%">
+          <% num = rand(1..10) %>
+          <%= image_tag "image_#{num}.png", class: "avatar-large" %>
+          <h5 class="mt-5">comments:</h5>
+        </div>
         <p>
           <%= @post.content %>
         </p>
-      <h5>comments</h5>
       </div>
     </div>
     <!-- Comments Section -->
     <div class="comment-container">
       <% @comments.each do |comment| %>
-        <div class="comment-block">
-          <p class="comment-user"><%= comment.user.user_name %></p>
-          <p class="comment-content"><%= comment.content %></p>
+        <div class="comment-block d-flex align-items-center">
+          <div class="avatar-container align-items-center " style="width:10%">
+            <% num = rand(1..10) %>
+            <%= image_tag "image_#{num}.png", class: "avatar-bordered ms-3" %>
+          </div>
+          <div class="d-flex flex-column">
+            <p class="comment-user"><%= comment.user.user_name %></p>
+            <p class="comment-content"><%= comment.content %></p>
+          </div>
         </div>
       <% end %>
-    </div>
-    <%# </div> %>
-    <!-- Comment Form (initially hidden) -->
-    <a class="topic-button mt-3" data-action="comment-form#reveal">COMMENT</a>
-    <br>
-    <br>
-    <div id="comment-form" class="d-none" data-comment-form-target="form">
-      <%= simple_form_for [@post, Comment.new] do |f| %>
-        <%= f.input :content, input_html: { class: 'form-control' }, label: false %>
-        <%= f.button :submit, class: 'topic-button' %>
-      <% end %>
+      <div id="comment-form" class="text-center ml-3" style="width: 100%">
+        <%= simple_form_for [@post, Comment.new] do |f| %>
+          <%= f.input :content, input_html: { class: 'form-control' }, label: false %>
+          <%= f.submit "COMMENT", class: 'topic-button mt-3' %>
+        <% end %>
+      </div>
     </div>
   </div>
+  <%# </div> %>
+  <!-- Comment Form (initially hidden) -->
 <% end %>
