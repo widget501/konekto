@@ -1,0 +1,11 @@
+<div id="post_<%= post.id %>_likes">
+  <% if post.likers.include?(current_user) %>
+    <%= button_to unlike_post_path(post), method: :delete, class: "btn-transparent", data: { turbo_frame: "post_#{post.id}_likes" } do %>
+      <i class="fa-solid fa-heart"></i><span class="ps-1"><%= post.likers.count %></span>
+    <% end %>
+  <% else %>
+    <%= button_to like_post_path(post), method: :post, class: "btn-transparent", data: { turbo_frame: "post_#{post.id}_likes" } do %>
+      <i class="fa-regular fa-heart"></i><span class="ps-1"><%= post.likers.count %></span>
+    <% end %>
+  <% end %>
+</div>

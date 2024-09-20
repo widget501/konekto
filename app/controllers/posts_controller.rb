@@ -4,12 +4,16 @@ class PostsController < ApplicationController
 
   def like
     if @post.likers.include?(current_user)
-      flash[:notice] = 'You have already liked this post'
+      flash.now[:notice] = 'You have already liked this post'
     else
       @post.likes.create(user: current_user)
-      flash[:notice] = 'Post has been liked'
+      flash.now[:notice] = 'Post has been liked'
     end
-    redirect_to @post, allow_other_host: true
+
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.replace("post_#{@post.id}_likes", partial: "posts/likes", locals: { post: @post }) }
+      format.html { redirect_to @post, allow_other_host: true }
+    end
   end
 
   def unlike
@@ -17,16 +21,18 @@ class PostsController < ApplicationController
 
     if like
       if like.destroy
-        flash[:notice] = 'You have unliked this post.'
+        flash.now[:notice] = 'You have unliked this post.'
       else
-        flash[:alert] = 'There was an error unliking this post. Please try again.'
+        flash.now[:alert] = 'There was an error unliking this post. Please try again.'
       end
     else
-      flash[:notice] = 'You have not liked this post.'
+      flash.now[:notice] = 'You have not liked this post.'
     end
 
-    redirect_to @post, allow_other_host: true
-  
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.replace("post_#{@post.id}_likes", partial: "posts/likes", locals: { post: @post }) }
+      format.html { redirect_to @post, allow_other_host: true }
+    end
   end
 
   # GET  all my posts
