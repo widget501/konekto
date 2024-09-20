@@ -1,7 +1,7 @@
 .comment-block {
   text-align: start;
   padding: 8px;
-
+  width: 92%;
   border-bottom: 1px solid rgb(32, 32, 32);
   .comment-user {
     color: rgb(32, 32, 32);
@@ -20,6 +20,10 @@
     // align-items: center;
     font-family: $body-font;
   }
+}
+
+.ps-1 {
+  font-family: sans-serif;
 }
 
 .comment-container {
