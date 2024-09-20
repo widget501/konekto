@@ -86,7 +86,6 @@
   width: 100%;
 }
 
-
 .header-container {
   display: flex;
   justify-content: center;
@@ -223,20 +222,6 @@
   background-color: #9cd7df;
 }
 
-.comment-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-// .comment-user {
-//   font-weight: bold;
-//   color: #133a3f;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 h2 {
   font-size: 40px;
   color: rgb(15, 22, 20);
@@ -286,12 +271,6 @@ h2 {
   background-color: #32d470;
 }
 
-// .card.topics-card h1 {
-//   font-size: 40px;
-//   color: rgb(15, 22, 20);
-//   text-align: left;
-// }
-
 .black-link-card {
   display: flex;
   justify-content: center;
@@ -326,10 +305,7 @@ h2 {
   width: 90%;
   min-width: 45rem;
   padding: 2rem;
-
 }
-
-
 
 .topic-buttons {
   display: flex;
