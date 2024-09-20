@@ -1,11 +1,12 @@
   <% if topics.present? %>
-    <% topics.each do |topic| %>
-      <div class="card-fg-small">
-          <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance } %>
-            <i class="fa-solid fa-robot small-icon"></i><%= if topic.by_ai %>
-
-      </div>
-    <% end %>
-  <% else %>
-    <h1>No topics available</h1>
+  <% topics.each do |topic| %>
+    <div class="card-fg-small">
+      <%= link_to topic.title, topic_path(topic), data: { turbo_frame: :topic_page, turbo_action: :advance } %>
+      <% if topic.by_ai %>
+        <i class="fa-solid fa-robot small-icon"></i>
+      <% end %>
+    </div>
   <% end %>
+<% else %>
+  <h1>No topics available</h1>
+<% end %>
